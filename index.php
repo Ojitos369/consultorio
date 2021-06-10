@@ -1,3 +1,6 @@
+<?php 
+echo phpversion();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
