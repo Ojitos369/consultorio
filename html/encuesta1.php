@@ -1,4 +1,5 @@
 <?php
+echo phpversion();
 include ('../php/conexion.php');
 $conexion = conectar('../php/datos.json');
 ?>

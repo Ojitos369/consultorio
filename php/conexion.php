@@ -19,5 +19,4 @@ function conectar($ruta){
     mysqli_set_charset($conexion,'utf8');
     return $conexion;
 }
-conectar('datos.json')
 ?>
