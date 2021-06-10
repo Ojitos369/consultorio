@@ -3,6 +3,7 @@ function conectar($ruta){
     $data = @file_get_contents($ruta);
     $datos = json_decode($data, true);
     $user = $datos["username"];
+    echo $user;
     $password = $datos["passwd"];
     $server = $datos["host"];
     $database = $datos["database"];
