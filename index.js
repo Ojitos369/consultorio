@@ -1,14 +1,9 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const router = express.Router();
+//console.clear()
+const app = require('./src/config/server');
+const datos = require('./src/app/assets/json/datos.json');
+require('./src/app/routes/news')(app,datos);
 
-app.use(express.static(__dirname+'/src'));
-
-router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'/src/index.html'));
+// iniciar el servidor
+app.listen(app.get('port'), () => {
+    console.log('Corriendo servidor en puerto', app.get('port'));
 });
-
-app.use('/', router);
-app.listen(process.env.port || 3000);
-console.log('Running at port 3000');
