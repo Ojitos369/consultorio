@@ -15,7 +15,7 @@
     </div>
     <article>
         <section>
-            <form action="">
+            <form action="/respuestas">
                 <% for(i=0; i<preguntas.length; i++){ %>
                     <% if(preguntas[i].tipo == 'date'){ %>
                         <div>
@@ -27,7 +27,7 @@
                         <% for(j=0; j<respuestas.length; j++){ %>
                             <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
                                 <div>
-                                    <label for="respuesta<%= respuestas[j].id %>"><input id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="respuesta<%= respuestas[j].id %>"><%= respuestas[j].respuesta %></label>
+                                    <label for="respuesta<%= respuestas[j].id %>"><input id="respuesta<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>" value="respuesta<%= respuestas[j].id %>"><%= respuestas[j].respuesta %></label>
                                 </div>
                             <% } %>
                         <% } %>
