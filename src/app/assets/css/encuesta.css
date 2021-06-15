@@ -1,0 +1,95 @@
+.logo{
+    display: flex;
+}
+
+.formulario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pregunta{
+    width: 50%;
+    background: #888;
+    color: #fff;
+    min-width: 250px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+}
+
+.pregunta::placeholder{
+    color: #fff;
+}
+.input{
+    border: none;
+    outline: none;
+}
+
+.pregunta:hover{
+    animation-name: en_input;
+    animation-duration: .3s;
+    background: #444;
+}
+
+.pregunta:focus{
+    animation-name: en_input;
+    animation-duration: .3s;
+    background: #444;
+}
+
+.enviar{
+    background: #444;
+}
+
+@keyframes en_input{
+    0%{
+        background: #444;
+        background: radial-gradient(circle, #444 0%, #888 100%);
+    }
+    10%{
+        background: #444;
+        background: radial-gradient(circle, #444 10%, #888 100%);
+    }
+    20%{
+        background: #444;
+        background: radial-gradient(circle, #444 20%, #888 100%);
+    }
+    30%{
+        background: #444;
+        background: radial-gradient(circle, #444 30%, #888 100%);
+    }
+    40%{
+        background: #444;
+        background: radial-gradient(circle, #444 40%, #888 100%);
+    }
+    50%{
+        background: #444;
+        background: radial-gradient(circle, #444 50%, #888 100%);
+    }
+    60%{
+        background: #444;
+        background: radial-gradient(circle, #444 60%, #888 100%);
+    }
+    70%{
+        background: #444;
+        background: radial-gradient(circle, #444 70%, #888 100%);
+    }
+    80%{
+        background: #444;
+        background: radial-gradient(circle, #444 80%, #888 100%);
+    }
+    90%{
+        background: #444;
+        background: radial-gradient(circle, #444 90%, #888 100%);
+    }
+    100%{
+        background: #444;
+        background: radial-gradient(circle, #444 99%, #888 100%);
+    }
+}

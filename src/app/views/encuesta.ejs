@@ -3,57 +3,53 @@
 
 <head>
     <meta charset='utf-8'>
-    <link rel="stylesheet" href="/css/estilo.css">
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/encuesta.css">
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
-    <link rel="icon" href="doc.ico.png">
+    <link rel="icon" href="/imagenes/logo-simple.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div>
-        <a href="/">Regresar</a>
+    <div class="logo">
+        <img src="/imagenes/logo-nombre.png" alt="" class="img-logo">
     </div>
     <article>
-        <section>
+        <section class="container">
             <% if(seccion == 1){ %>
-                <form action="respuesta_entrada" method="POST"> 
+                <form action="respuesta_entrada" method="POST" class="formulario"> 
             <% }else{ %>
-                <form action="respuesta_sailda" method="POST">
+                <form action="respuesta_sailda" method="POST" class="formulario">
             <% } %>
                 <% for(i=0; i<preguntas.length; i++){ %>
                     <% if(preguntas[i].tipo == 'date'){ %>
-                        <div class="pregunta <%= preguntas[i].clase %>">
-                            <%= preguntas[i].pregunta %> <br>
-                            <input name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
-                        </div>
-                    <% }else if(preguntas[i].tipo == 'checkbox'){ %>
+                        <%= preguntas[i].pregunta %> <br>
+                        <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-fecha" name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
+                    <% }else if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
                         <div class="pregunta <%= preguntas[i].clase %>">
                         <%= preguntas[i].pregunta %>
                         <br>
                         <% for(j=0; j<respuestas.length; j++){ %>
                             <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
-                                    <label for="respuesta<%= respuestas[j].id %>"><input id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="respuesta<%= respuestas[j].id %>" name="<%= preguntas[i].id %>"><%= respuestas[j].respuesta %></label>
+                                    <label for="respuesta<%= respuestas[j].id %>"><input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="respuesta<%= respuestas[j].id %>" name="<%= preguntas[i].id %>"><%= respuestas[j].respuesta %></label>
                                     <br>
                             <% } %>
                         <% } %>
                         </div>
                     <% }else{ %>
-                        <div class="pregunta <%= preguntas[i].clase  %>">
-                            <input name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
-                        </div>
+                        <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
                     <% } %>
                     <br>
                 <% } %>
                 <input name="id_encuesta" type="hidden" value="<%= seccion %>">
-                <input type="submit" title="enviar">
+                <input class="pregunta input enviar" type="submit" title="enviar">
             </form>
         </section>
     </article>
-
     <footer>
-        <a href="https://www.instagram.com/lorenagomezrecovery/">Instgram</a>
+        <img src="/imagenes/qr.png" alt="" class="instagram">
+        <p>Te invito a seguirme en Instagram</p>
     </footer>
     
 </body>
