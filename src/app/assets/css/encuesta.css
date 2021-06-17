@@ -1,8 +1,20 @@
+.container-top{
+    display: none;
+    visibility: hidden;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.imagen-top{
+    width: 30%;
+}
+
 .logo{
     display: flex;
 }
 
-.formulario{
+.container{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -12,7 +24,7 @@
 
 .pregunta{
     width: 50%;
-    background: #888;
+    background: #454142;
     color: #fff;
     min-width: 250px;
     padding: 10px;
@@ -34,62 +46,68 @@
 .pregunta:hover{
     animation-name: en_input;
     animation-duration: .3s;
-    background: #444;
+    background: #333;
 }
 
 .pregunta:focus{
     animation-name: en_input;
     animation-duration: .3s;
-    background: #444;
+    background: #333;
 }
 
 .enviar{
-    background: #444;
+    background: #222;
+    height: 75px;
+}
+
+.qr{
+    width: 350px;
+    height: 350px;
 }
 
 @keyframes en_input{
     0%{
-        background: #444;
-        background: radial-gradient(circle, #444 0%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 0%, #454142 100%);
     }
     10%{
-        background: #444;
-        background: radial-gradient(circle, #444 10%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 10%, #454142 100%);
     }
     20%{
-        background: #444;
-        background: radial-gradient(circle, #444 20%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 20%, #454142 100%);
     }
     30%{
-        background: #444;
-        background: radial-gradient(circle, #444 30%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 30%, #454142 100%);
     }
     40%{
-        background: #444;
-        background: radial-gradient(circle, #444 40%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 40%, #454142 100%);
     }
     50%{
-        background: #444;
-        background: radial-gradient(circle, #444 50%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 50%, #454142 100%);
     }
     60%{
-        background: #444;
-        background: radial-gradient(circle, #444 60%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 60%, #454142 100%);
     }
     70%{
-        background: #444;
-        background: radial-gradient(circle, #444 70%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 70%, #454142 100%);
     }
     80%{
-        background: #444;
-        background: radial-gradient(circle, #444 80%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 80%, #454142 100%);
     }
     90%{
-        background: #444;
-        background: radial-gradient(circle, #444 90%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 90%, #454142 100%);
     }
     100%{
-        background: #444;
-        background: radial-gradient(circle, #444 99%, #888 100%);
+        background: #333;
+        background: radial-gradient(circle, #333 99%, #454142 100%);
     }
 }
