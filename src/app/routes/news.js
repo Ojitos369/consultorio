@@ -60,6 +60,18 @@ module.exports = (app, datos) => {
         res.redirect('/');
     });
 
+    app.get('/consulta', (req, res) => {
+        let query = 'select us.nombre, pre.pregunta, con.respuesta from contestado as con  inner join usuario as us on con.id_usuario=us.id inner join preguntas as pre on pre.id=con.id_pregunta';
+        conexion.query(query, (err, consulta) => {
+            console.clear();
+            console.log('\n');
+            console.log(consulta);
+            res.render('consultar',{
+                consulta: consulta
+            });
+        });
+    });
+
     app.get('/', (req, res) => {
         res.render('index');
     });

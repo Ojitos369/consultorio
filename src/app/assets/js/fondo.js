@@ -6,3 +6,10 @@ function ocultar(){
         fondo.style.display = 'block';
     },10000);
 }
+
+function mostrar_formulario(){
+    setTimeout(()=>{
+        let formulario = document.getElementById('container-form');
+        formulario.style.visibility = 'visible';
+    },3000);
+}

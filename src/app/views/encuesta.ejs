@@ -14,42 +14,40 @@
 
 <body>
     <%- include('fondo') %>
-    <article>
-        <section>
-            <% if(seccion == 1){ %>
-                <form action="respuesta_entrada" method="POST" class="formulario container"> 
-            <% }else{ %>
-                <form action="respuesta_sailda" method="POST" class="formulario container">
-            <% } %>
-                <% for(i=0; i<preguntas.length; i++){ %>
-                    <% if(preguntas[i].tipo == 'date'){ %>
-                        <%= preguntas[i].pregunta %> <br>
-                        <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-fecha" name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
-                    <% }else if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
-                        <div class="pregunta <%= preguntas[i].clase %>">
-                        <%= preguntas[i].pregunta %>
-                        <br>
-                        <% for(j=0; j<respuestas.length; j++){ %>
-                            <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
-                                    <label for="respuesta<%= respuestas[j].id %>"><input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="respuesta<%= respuestas[j].id %>" name="<%= preguntas[i].id %>"><%= respuestas[j].respuesta %></label>
-                                    <br>
-                            <% } %>
-                        <% } %>
-                        </div>
-                    <% }else{ %>
-                        <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
-                    <% } %>
+    <div class="main-container" id="main-container">
+        <% if(seccion == 1){ %>
+            <form action="respuesta_entrada" method="POST" class="formulario container"> 
+        <% }else{ %>
+            <form action="respuesta_sailda" method="POST" class="formulario container">
+        <% } %>
+            <% for(i=0; i<preguntas.length; i++){ %>
+                <% if(preguntas[i].tipo == 'date'){ %>
+                    <%= preguntas[i].pregunta %> <br>
+                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-fecha" name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
+                <% }else if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
+                    <div class="pregunta <%= preguntas[i].clase %>">
+                    <%= preguntas[i].pregunta %>
                     <br>
+                    <% for(j=0; j<respuestas.length; j++){ %>
+                        <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
+                                <label for="respuesta<%= respuestas[j].id %>"><input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>"><%= respuestas[j].respuesta %></label>
+                                <br>
+                        <% } %>
+                    <% } %>
+                    </div>
+                <% }else{ %>
+                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
                 <% } %>
-                <input name="id_encuesta" type="hidden" value="<%= seccion %>">
-                <input class="pregunta input enviar" type="submit" title="enviar">
-            </form>
-        </section>
-    </article>
-    <footer class="container container-qr">
-        <img src="/imagenes/qr.png" alt="" class="instagram qr">
-        <p>Te invito a seguirme en Instagram</p>
-    </footer>
+                <br>
+            <% } %>
+            <input name="id_encuesta" type="hidden" value="<%= seccion %>">
+            <input class="pregunta input enviar" type="submit" title="enviar">
+        </form>
+        <div class="container container-qr" id="footer">
+            <img src="/imagenes/qr.png" alt="" class="instagram qr">
+            <p>Te invito a seguirme en Instagram</p>
+        </div>
+    </div>
     
 </body>
 </html>

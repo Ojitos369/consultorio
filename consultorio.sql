@@ -1,6 +1,6 @@
---DROP DATABASE IF EXISTS `consultorio`;
---CREATE DATABASE `consultorio`;
---USE `consultorio`;
+DROP DATABASE IF EXISTS `consultorio`;
+CREATE DATABASE `consultorio`;
+USE `consultorio`;
 ----------USUARIO---------
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
@@ -87,5 +87,5 @@ INSERT INTO `preguntas` (id_seccion, pregunta, tipo, clase) VALUES (1,'NOMBRE Y 
 UNLOCK TABLES;
 
 LOCK TABLES `respuestas` WRITE;
-INSERT INTO `respuestas` (id_pregunta, respuesta, clase) VALUES (3,'Casada','respuesta-1'),(3,'Soltera','respuesta-2'),(10,'FAST RECOVERY','respuesta-3'),(10,'FULL RECOVERY','respuesta-4'),(10,'EXPERIENCIA ST REGIS','respuesta-5');
+INSERT INTO `respuestas` (id_pregunta, respuesta, clase) VALUES (3,'Casada','respuesta-1'),(3,'Soltera','respuesta-2'),(15,'FAST RECOVERY','respuesta-3'),(15,'FULL RECOVERY','respuesta-4'),(15,'EXPERIENCIA ST REGIS','respuesta-5');
 UNLOCK TABLES;

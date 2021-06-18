@@ -1,3 +1,10 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
 .container-top{
     display: none;
     visibility: hidden;
@@ -66,47 +73,11 @@
 }
 
 @keyframes en_input{
-    0%{
+    from{
         background: #333;
         background: radial-gradient(circle, #333 0%, #454142 100%);
     }
-    10%{
-        background: #333;
-        background: radial-gradient(circle, #333 10%, #454142 100%);
-    }
-    20%{
-        background: #333;
-        background: radial-gradient(circle, #333 20%, #454142 100%);
-    }
-    30%{
-        background: #333;
-        background: radial-gradient(circle, #333 30%, #454142 100%);
-    }
-    40%{
-        background: #333;
-        background: radial-gradient(circle, #333 40%, #454142 100%);
-    }
-    50%{
-        background: #333;
-        background: radial-gradient(circle, #333 50%, #454142 100%);
-    }
-    60%{
-        background: #333;
-        background: radial-gradient(circle, #333 60%, #454142 100%);
-    }
-    70%{
-        background: #333;
-        background: radial-gradient(circle, #333 70%, #454142 100%);
-    }
-    80%{
-        background: #333;
-        background: radial-gradient(circle, #333 80%, #454142 100%);
-    }
-    90%{
-        background: #333;
-        background: radial-gradient(circle, #333 90%, #454142 100%);
-    }
-    100%{
+    to{
         background: #333;
         background: radial-gradient(circle, #333 99%, #454142 100%);
     }
