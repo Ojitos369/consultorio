@@ -13,52 +13,10 @@
     <script src="/js/consulta.js"></script>
     <title>consulta</title>
 </head>
-<body onload="hola(paso);">
+<body">
+    <input type="text" id="buscar-pal" onkeyup="autocompletado(paso)" style="border: solid 2px">
     <div>
-        <table>
-            <thead>
-                <tr class="elemento">
-                    <td class="dato nombre">Nombre</td>
-                    <td class="dato pregunta">Pregunta</td>
-                    <td class="dato respuesta">Respuesta</td>
-                </tr>
-            </thead>
-            <tbody>
-            <% 
-            let actual = consulta[0].nombre;
-            let tabla = false;
-            for (i=0; i<consulta.length;i++){
-                if (tabla==false){
-                    tabla = true %>
-                <% }
-                if (actual != consulta[i].nombre){
-                    actual = consulta[i].nombre;
-                }
-                try{
-                    if (actual != consulta[i+1].nombre){
-                        tabla = false;
-                        console.log(`actual ${actual}`);
-                        console.log(`siguiente ${consulta[i+1].nombre}`);
-                    }
-                }catch{
-                    console.log('fin');
-                } %>
-                        <tr class="elemento">
-                            <td class="dato nombre"><%= consulta[i].nombre %></td>
-                            <td class="dato pregunta"><%= consulta[i].pregunta %></td>
-                            <td class="dato respuesta"><%= consulta[i].respuesta %></td>
-                        </tr>
-
-                <% if (tabla==false){ %>
-                    <tr class="elemento">
-                        <td class="dato nombre"></td>
-                        <td class="dato pregunta"></td>
-                        <td class="dato respuesta"></td>
-                    </tr>
-                <% }
-            } %>
-            </tbody>
-        </table>
+        <ul id="demo"></ul>
     </div>
 </body>
 </html>

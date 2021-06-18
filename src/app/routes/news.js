@@ -65,7 +65,7 @@ module.exports = (app, datos) => {
         conexion.query(query, (err, consulta) => {
             console.clear();
             console.log('\n');
-            console.log(consulta);
+            //console.log(consulta);
             res.render('consultar',{
                 consulta: consulta
             });
