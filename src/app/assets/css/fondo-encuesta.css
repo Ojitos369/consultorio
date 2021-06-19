@@ -8,16 +8,23 @@
 }
 
 .container-logo{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(0,0,0,0) 100%);
     display: flex;
+    position: sticky;
+    top: 0;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: 10%;
+    height: 150px;
+    z-index: 5;
     animation-name: logo;
     animation-duration: 3s;
 }
 .frase{
+    background-color: #fff;
+    color: #454142;
     margin-bottom: 30px;
     animation-name: frase;
     animation-duration:3s;
