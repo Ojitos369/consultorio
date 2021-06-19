@@ -1,36 +1,154 @@
-function hola(datos){
-    let consulta = JSON.parse(datos);
-    console.log('consulta desde js\n');
-    console.log(consulta.length);
-    console.log(consulta[0].nombre);
-}
-
 function autocompletado(datos){
     let consulta = JSON.parse(datos);
     let n = consulta.length;
-    document.getElementById("demo").innerHTML = '';
-    var preguntas = [];
+    let tabla = document.getElementById("table");
+    let preguntas = [];
     for(i=0; i<n; i++){
         preguntas.push(consulta[i]);
     }
 
-    var pal = document.getElementById("buscar-pal").value;
-    var tam = pal.length;
-    for(i in preguntas){
-        var nombre = preguntas[i].nombre;
-        var pregunta = preguntas[i].pregunta;
-        var respuesta = preguntas[i].respuesta;
-        var str = [nombre.substring(0,tam), pregunta.substring(0,tam), respuesta.substring(0,tam)];
-        if(pal.length <= nombre.length && pal.length != 0 && nombre.length != 0){
-            if((pal.toLowerCase() == str[0].toLowerCase()) || (pal.toLowerCase() == str[1].toLowerCase()) || (pal.toLowerCase() == str[2].toLowerCase())){
-                texto = (`${preguntas[i].nombre} | ${preguntas[i].pregunta} | ${preguntas[i].respuesta}`)
-                var node = document.createElement("LI");
-                var textnode = document.createTextNode(texto);
-                node.appendChild(textnode);
-                document.getElementById("demo").appendChild(node);
-            } else {
-                console.log('no');
+    document.getElementById("table").innerHTML = '';
+
+    let pal = document.getElementById("buscar-pal").value;
+    
+    let tam = pal.length;
+    if(pal == ''){
+        tablaCompleta(datos);
+    }else{
+        crearTabla(tabla);
+        let tbody = document.createElement("tbody");
+        for(i in preguntas){
+            let nombre = preguntas[i].nombre;
+            let pregunta = preguntas[i].pregunta;
+            let respuesta = preguntas[i].respuesta;
+            let str = [nombre.substring(0,tam), pregunta.substring(0,tam), respuesta.substring(0,tam)];
+            if(pal.length <= nombre.length && pal.length != 0 && nombre.length != 0){
+                if((pal.toLowerCase() == str[0].toLowerCase()) || (pal.toLowerCase() == str[1].toLowerCase()) || (pal.toLowerCase() == str[2].toLowerCase())){
+                    let tr = document.createElement("tr");
+                    let tdNombre = document.createElement("td");
+                    let tdPregunta = document.createElement("td");
+                    let tdRespuesta = document.createElement("td");
+                    let txNombre = document.createTextNode(nombre);
+                    let txPregunta = document.createTextNode(pregunta);
+                    let txRespuesta = document.createTextNode(respuesta);
+                    tdNombre.appendChild(txNombre);
+                    tdPregunta.appendChild(txPregunta);
+                    tdRespuesta.appendChild(txRespuesta);
+                    tdNombre.scope = "row";
+                    tr.appendChild(tdNombre);
+                    tr.appendChild(tdPregunta);
+                    tr.appendChild(tdRespuesta);
+                    tr.className = "broder border-bottom border-dark"
+                    tbody.appendChild(tr);
+                } else {
+                    console.log('no');
+                }
             }
+        tabla.appendChild(tbody);
         }
+    }
+}
+
+function tablaCompleta(datos){
+    let tabla = document.getElementById("table");
+    let consulta = JSON.parse(datos);
+
+    let thead = document.createElement("thead");
+    let tr = document.createElement("tr");
+    let thNombre = document.createElement("th");
+    let thPregunta = document.createElement("th");
+    let thRespuesta = document.createElement("th");
+    let txNombre = document.createTextNode('Nombre');
+    let txPregunta = document.createTextNode('Pregunta');
+    let txRespuesta = document.createTextNode('Respuesta');
+    thNombre.appendChild(txNombre);
+    thPregunta.appendChild(txPregunta);
+    thRespuesta.appendChild(txRespuesta);
+    thNombre.scope = "row";
+    thPregunta.scope = "row";
+    thRespuesta.scope = "row";
+    tr.appendChild(thNombre);
+    tr.appendChild(thPregunta);
+    tr.appendChild(thRespuesta);
+    thead.appendChild(tr);
+    tabla.appendChild(thead);
+    let tbody = document.createElement("tbody");
+    for(i in consulta){
+        let bnombre = consulta[i].nombre;
+        let bpregunta = consulta[i].pregunta;
+        let brespuesta = consulta[i].respuesta;
+        let btr = document.createElement("tr");
+        let bthNombre = document.createElement("th");
+        let btdPregunta = document.createElement("td");
+        let btdRespuesta = document.createElement("td");
+        let btxNombre = document.createTextNode(bnombre);
+        let btxPregunta = document.createTextNode(bpregunta);
+        let btxRespuesta = document.createTextNode(brespuesta);
+        bthNombre.appendChild(btxNombre);
+        btdPregunta.appendChild(btxPregunta);
+        btdRespuesta.appendChild(btxRespuesta);
+        bthNombre.scope = "row";
+        btr.appendChild(bthNombre);
+        btr.appendChild(btdPregunta);
+        btr.appendChild(btdRespuesta);
+        btr.className = "broder border-bottom border-dark"
+        tbody.appendChild(btr);
+    }
+    tabla.appendChild(tbody);
+}
+
+function crearTabla(tabla){
+    let thead = document.createElement("thead");
+    let tr = document.createElement("tr");
+    let tdNombre = document.createElement("th");
+    let tdPregunta = document.createElement("th");
+    let tdRespuesta = document.createElement("th");
+    let txNombre = document.createTextNode('Nombre');
+    let txPregunta = document.createTextNode('Pregunta');
+    let txRespuesta = document.createTextNode('Respuesta');
+    tdNombre.appendChild(txNombre);
+    tdPregunta.appendChild(txPregunta);
+    tdRespuesta.appendChild(txRespuesta);
+    tdNombre.scope = "row";
+    tdPregunta.scope = "row";
+    tdRespuesta.scope = "row";
+    tr.appendChild(tdNombre);
+    tr.appendChild(tdPregunta);
+    tr.appendChild(tdRespuesta);
+    thead.appendChild(tr);
+    tabla.appendChild(thead);
+}
+
+function bajarxls(tableID, filename=''){
+    let pal = document.getElementById("buscar-pal").value;
+    if (pal != '') pal = '-'+pal;
+    filename = filename+pal;
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel;charset=UTF-8';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+
+    // Create download link element
+    downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+        // Setting the file name
+        downloadLink.download = filename;
+
+        //triggering the function
+        downloadLink.click();
     }
 }
