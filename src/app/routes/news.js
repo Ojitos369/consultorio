@@ -19,7 +19,7 @@ module.exports = (app, datos) => {
     app.get('/final', (req, res) => {
         conexion.query('select * from preguntas where preguntas.id_seccion in (select id from seccion where seccion.id_encuesta=2)', (err, preguntas) => {
             conexion.query('select * from respuestas', (err, respuestas) => {
-                res.render('encuesta',{
+                res.render('encuesta_fin',{
                     preguntas: preguntas,
                     respuestas: respuestas,
                     seccion: 2,
