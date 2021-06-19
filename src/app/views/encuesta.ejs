@@ -15,11 +15,7 @@
 <body>
     <%- include('fondo') %>
     <div class="main-container" id="main-container">
-        <% if(seccion == 1){ %>
-            <form action="respuesta_entrada" method="POST" class="formulario container"> 
-        <% }else{ %>
-            <form action="respuesta_sailda" method="POST" class="formulario container">
-        <% } %>
+        <form action="<%= accion %>" method="POST" class="formulario container">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'date'){ %>
                     <%= preguntas[i].pregunta %> <br>
