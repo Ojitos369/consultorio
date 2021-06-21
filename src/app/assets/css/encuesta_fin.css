@@ -1,0 +1,24 @@
+.eleccion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label-seleccion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-eleccion{
+    visibility: hidden;
+}
+
+.img-res{
+    width: 50px;
+    height: 50px;
+}
+
+.input-eleccion:checked{
+    visibility: visible;
+}

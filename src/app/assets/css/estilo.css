@@ -15,14 +15,9 @@ input{
     width: 400px;
 }
 
-
-
 input::placeholder{
-    font-size: 15px;
+    font-size: 25px;
 }
-
-
-
 
 .inicial{
     background-color: pink;
@@ -33,9 +28,6 @@ input::placeholder{
     position: relative;
     top: 150px;
 }
-
-    
-
 
 .final{
     background-color: pink; 
@@ -68,27 +60,5 @@ input::placeholder{
 .register{
     width: 100px;
 }
-
-/**{
-    background-color: rgb(0, 0, 0)
-}
-
-h1{
-    width: 300px;
-    border: 3px solid red;
-    background-color: pink;
-}
-
-h1:hover{
-    background-color: hotpink;
-}
-
-a{
-    text-decoration: none;
-    margin: 300px;
-    color: white; 
-}
-
-
 
 
