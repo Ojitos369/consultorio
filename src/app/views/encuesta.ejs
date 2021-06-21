@@ -5,7 +5,8 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/encuesta.css">
-    <link rel="stylesheet" href="/css/fondo-encuesta.css">
+    <link rel="stylesheet" href="/css/fondo.css">
+    <link rel="stylesheet" href="/css/logo.css">
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
     <link rel="icon" href="/imagenes/logo-simple.png">
     <meta charset="utf-8">
@@ -13,15 +14,20 @@
 </head>
 
 <body>
-    <%- include('fondo') %>
+    <img src="/imagenes/fondo.jpeg" alt="" class="img-fondo">
     <div class="main-container" id="main-container">
+        <div class="logo">
+            <%- include('logo') %>
+        </div>
         <form action="<%= accion %>" method="POST" class="formulario container">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'date'){ %>
-                    <%= preguntas[i].pregunta %> <br>
-                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-fecha" name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
+                    <label for="pregunta-<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %>">
+                        <%= preguntas[i].pregunta %> <br>
+                        <input id="pregunta-<%= preguntas[i].id %>" class="input input-fecha"  name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
+                    </label>
                 <% }else if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
-                    <div class="pregunta <%= preguntas[i].clase %>">
+                    <div class="eleccion pregunta <%= preguntas[i].clase %>">
                     <%= preguntas[i].pregunta %>
                     <br>
                     <% for(j=0; j<respuestas.length; j++){ %>
@@ -32,7 +38,7 @@
                     <% } %>
                     </div>
                 <% }else{ %>
-                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
+                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
                 <% } %>
                 <br>
             <% } %>
@@ -40,8 +46,8 @@
             <input class="pregunta input enviar" type="submit" title="enviar">
         </form>
         <div class="container container-qr" id="footer">
+            <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
             <img src="/imagenes/qr.png" alt="" class="instagram qr">
-            <p>Te invito a seguirme en Instagram</p>
         </div>
     </div>
     

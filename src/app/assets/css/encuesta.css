@@ -1,24 +1,27 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     height: 100%;
 }
 
-.container-top{
-    display: none;
-    visibility: hidden;
-    justify-content: center;
-    width: 100%;
-    height: 10%;
-}
-
 .imagen-top{
-    width: 30%;
+    width: 100%;
+    max-width: 500px;
 }
 
 .logo{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(0,0,0,0) 100%);
     display: flex;
+    position: sticky;
+    top: 0px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container{
@@ -26,31 +29,56 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 0px;
+    padding: 0px;
 }
 
 .pregunta{
-    width: 50%;
+    width: 100%;
+    max-width: 500px;
+    letter-spacing: 3px;
     background: #454142;
     color: #fff;
     min-width: 250px;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    margin: 5px;
+    margin-top: 50px;
+}
+
+.eleccion{
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .pregunta::placeholder{
     color: #fff;
 }
+
 .input{
     border: none;
     outline: none;
 }
 
+.pregunta{
+    margin: 20px 0;
+}
+
+.direccion{
+    margin: 0;
+}
+
 .pregunta:hover{
+    animation-name: en_input;
+    animation-duration: .3s;
+    background: #333;
+}
+
+.input-fecha:hover{
     animation-name: en_input;
     animation-duration: .3s;
     background: #333;
@@ -62,9 +90,47 @@
     background: #333;
 }
 
+.input-fecha:focus{
+    animation-name: en_input;
+    animation-duration: .3s;
+    background: #333;
+}
+
+label{
+    margin: 0px;
+}
+
+.input-fecha{
+    width: 100%;
+    max-width: 500px;
+    letter-spacing: 3px;
+    background: #454142;
+    color: #fff;
+    min-width: 250px;
+    text-align: center;
+}
+
 .enviar{
+    display: flex;
+    justify-content: center;
     background: #222;
-    height: 75px;
+    height: 30px;
+    width: 200px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: #999;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    margin-top: 0px;
+}
+
+.insta_text{
+    color: 454142;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
 }
 
 .qr{

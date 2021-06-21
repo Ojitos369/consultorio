@@ -1,227 +1,186 @@
-*{
-    font-family: 'Montserrat', sans-serif;
-}
-
-.protector{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+.frase{
     background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 10;
+    color: #454142;
+    margin-bottom: 30px;
+    animation-name: frase;
+    animation-duration:3s;
 }
-
-.protector > .img-logo{
-    width: 50%;
-}
-
 
 .frase{
-    animation-name: frase;
+    animation-name: frase2;
     animation-duration:3s;
     animation-iteration-count: infinite;
 }
-
-.container{
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.img-logo{
+    width: 15%;
+    animation-name: img-logo;
+    animation-duration:3s;
 }
 
-.container > .frase{
-    color: #454142;
-    margin-bottom: 30px;
-    font-size: xx-large;
-}
-.container > .img-logo{
-    width: 30%;
-    height: 200px;
-}
-
-.encuestas{
-    display: flex;
-    flex-direction: row;
-}
-
-.encuesta{
-    background: #fff0;
-    background: linear-gradient(180deg, #454142 0%, #fff0 100%);
-    padding: 20px;
-    color: #000;
-    width: 30%;
-    min-width: 300px;
-    height: 100px;
-    font-size: xx-large;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 49px 49px 49px 49px;
-    -moz-border-radius: 49px 49px 49px 49px;
-    -webkit-border-radius: 49px 49px 49px 49px;
-    margin: 30px;
-}
-.encuesta:hover{
-    padding: 50px;
-    width: 30%;
-    height: 150px;
-    transition-duration: 1s;
+@keyframes img-logo{
+    from {
+        width: 95%;
+    }
+    to{
+        width: 15%;
+    }
 }
 
 @keyframes frase{
+    from{
+        font-size: xx-large;
+    }
+    to{
+        font-size: medium;
+    }
+}
+
+@keyframes frase2{
     0%{
         background: #454142;
         background: linear-gradient(120deg, #454142 0%, #fff 0%, #454142 5%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     5%{
         background: #454142;
         background: linear-gradient(120deg, #454142 0%, #fff 5%, #454142 10%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     10%{
         background: #454142;
         background: linear-gradient(120deg, #454142 5%, #fff 10%, #454142 15%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     15%{
         background: #454142;
         background: linear-gradient(120deg, #454142 10%, #fff 15%, #454142 20%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     20%{
         background: #454142;
         background: linear-gradient(120deg, #454142 15%, #fff 20%, #454142 25%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     25%{
         background: #454142;
         background: linear-gradient(120deg, #454142 20%, #fff 25%, #454142 30%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     30%{
         background: #454142;
         background: linear-gradient(120deg, #454142 25%, #fff 30%, #454142 35%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     35%{
         background: #454142;
         background: linear-gradient(120deg, #454142 30%, #fff 35%, #454142 40%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     40%{
         background: #454142;
         background: linear-gradient(120deg, #454142 35%, #fff 40%, #454142 45%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     45%{
         background: #454142;
         background: linear-gradient(120deg, #454142 40%, #fff 45%, #454142 50%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     50%{
         background: #454142;
         background: linear-gradient(120deg, #454142 45%, #fff 50%, #454142 55%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     55%{
         background: #454142;
         background: linear-gradient(120deg, #454142 50%, #fff 55%, #454142 60%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     60%{
         background: #454142;
         background: linear-gradient(120deg, #454142 55%, #fff 60%, #454142 65%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     65%{
         background: #454142;
         background: linear-gradient(120deg, #454142 60%, #fff 65%, #454142 70%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     70%{
         background: #454142;
         background: linear-gradient(120deg, #454142 65%, #fff 70%, #454142 75%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     75%{
         background: #454142;
         background: linear-gradient(120deg, #454142 70%, #fff 75%, #454142 80%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     80%{
         background: #454142;
         background: linear-gradient(120deg, #454142 75%, #fff 80%, #454142 85%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     85%{
         background: #454142;
         background: linear-gradient(120deg, #454142 80%, #fff 85%, #454142 90%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     90%{
         background: #454142;
         background: linear-gradient(120deg, #454142 85%, #fff 90%, #454142 95%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     95%{
         background: #454142;
         background: linear-gradient(120deg, #454142 90%, #fff 95%, #454142 100%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
     100%{
         background: #454142;
         background: linear-gradient(120deg, #454142 95%, #fff 100%, #454142 100%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: xx-large;
+        font-size: medium;
     }
 }

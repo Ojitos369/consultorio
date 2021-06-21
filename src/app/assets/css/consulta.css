@@ -1,3 +1,11 @@
 *{
     font-family: 'Montserrat', sans-serif;
 }
+
+.buscar{
+    background-color: #0002;
+}
+
+.buscar:focus{
+    background-color: #0004;
+}
