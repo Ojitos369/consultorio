@@ -11,9 +11,6 @@
 
 .img-logo{
     width: 100%;
-<<<<<<< HEAD
-    max-width: 450px;
-=======
     max-width: 500px;
     height: 100%;
 }
@@ -30,7 +27,6 @@
     animation-name: frase2;
     animation-duration:3s;
     animation-iteration-count: infinite;
->>>>>>> 27294835aaf8f6dae7f2af98b730df05ed37cfa5
 }
 
 .logo{
