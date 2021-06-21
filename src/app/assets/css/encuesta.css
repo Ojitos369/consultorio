@@ -10,8 +10,7 @@
 }
 
 .img-logo{
-    width: 100%;
-    max-width: 500px;
+    width: 100% !important; 
     height: 100%;
 }
 
@@ -38,6 +37,7 @@
     max-width: 500px;
     height: 250px;
     top: 0px;
+    margin-bottom: 25px;
     flex-direction: column;
     align-items: center;
     animation-name: logo_container;
@@ -73,7 +73,7 @@
     width: 100%;
     max-width: 500px;
     letter-spacing: 3px;
-    background: #454142;
+    background: #474243;
     color: #fff;
     min-width: 250px;
     padding: 15px;
@@ -188,6 +188,7 @@ label{
     }
     to{
         font-size: medium;
+        border: solid 1px #fff;
     }
 }
 
@@ -197,7 +198,6 @@ label{
         background: linear-gradient(120deg, #454142 0%, #fff 0%, #454142 5%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     5%{
         background: #454142;
@@ -205,6 +205,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px#fff;
     }
     10%{
         background: #454142;
@@ -212,6 +213,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     15%{
         background: #454142;
@@ -219,6 +221,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     20%{
         background: #454142;
@@ -226,6 +229,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     25%{
         background: #454142;
@@ -233,6 +237,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     30%{
         background: #454142;
@@ -240,6 +245,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     35%{
         background: #454142;
@@ -247,6 +253,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     40%{
         background: #454142;
@@ -254,6 +261,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     45%{
         background: #454142;
@@ -261,6 +269,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     50%{
         background: #454142;
@@ -268,6 +277,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     55%{
         background: #454142;
@@ -275,6 +285,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     60%{
         background: #454142;
@@ -282,6 +293,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     65%{
         background: #454142;
@@ -289,6 +301,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     70%{
         background: #454142;
@@ -296,6 +309,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     75%{
         background: #454142;
@@ -303,6 +317,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     80%{
         background: #454142;
@@ -310,6 +325,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     85%{
         background: #454142;
@@ -317,6 +333,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     90%{
         background: #454142;
@@ -324,6 +341,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     95%{
         background: #454142;
@@ -331,6 +349,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
     100%{
         background: #454142;
@@ -338,6 +357,7 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+        border: solid 1px #fff;
     }
 }
 
