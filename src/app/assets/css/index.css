@@ -36,6 +36,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 25px;
 }
 
 .container > .frase{
@@ -45,12 +46,13 @@
 }
 .container > .img-logo{
     width: 30%;
-    height: 200px;
+    height: 350px;
 }
 
 .encuestas{
     display: flex;
     flex-direction: row;
+    margin-top: 100px;
 }
 
 .encuesta{
@@ -67,8 +69,19 @@
     border-radius: 49px 49px 49px 49px;
     -moz-border-radius: 49px 49px 49px 49px;
     -webkit-border-radius: 49px 49px 49px 49px;
-    margin: 30px;
+    letter-spacing: 3px;
 }
+
+.inicial{
+    justify-self: flex-start;
+    margin-left: 75px;
+}
+
+.final{
+    justify-self: flex-end;
+    margin-left: 100px;
+}
+
 .encuesta:hover{
     padding: 50px;
     width: 30%;
