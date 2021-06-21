@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/encuesta.css">
     <link rel="stylesheet" href="/css/fondo.css">
+    <link rel="stylesheet" href="/css/logo.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="/imagenes/logo-simple.png">
     <meta charset="utf-8">
@@ -36,6 +37,9 @@
                         <% } %>
                     <% } %>
                     </div>
+                <% }else if(preguntas[i].tipo == 'textarea'){%>
+                    <textarea id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></textarea>
+                    <br>
                 <% }else{ %>
                     <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
                 <% } %>
