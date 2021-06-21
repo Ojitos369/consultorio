@@ -123,6 +123,11 @@ label{
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     margin-top: 0px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    color: rgb(69, 65, 66);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .insta_text{
@@ -131,11 +136,12 @@ label{
     width: 100%;
     max-width: 500px;
     margin-top: 30px;
+    letter-spacing: 1px;
 }
 
 .qr{
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
 }
 
 @keyframes en_input{
