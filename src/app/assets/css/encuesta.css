@@ -149,6 +149,7 @@ label{
     color: rgb(69, 65, 66);
     font-weight: bold;
     cursor: pointer;
+    border: none;
 }
 
 .insta_text{
@@ -163,6 +164,10 @@ label{
 .qr{
     width: 300px;
     height: 300px;
+}
+
+.opinion{
+    height: 100px;
 }
 
 @keyframes en_input{
