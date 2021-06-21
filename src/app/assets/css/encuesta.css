@@ -38,7 +38,9 @@
     background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(0,0,0,0) 100%);
     display: flex;
     position: sticky;
-    height: 250px;
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
     top: 0px;
     flex-direction: column;
     align-items: center;
@@ -335,5 +337,29 @@ label{
         -webkit-background-clip: text;
         color: transparent;
         font-size: medium;
+    }
+}
+
+@keyframes logo_container{
+    from{
+        position: absolute;
+        width: 100%;
+        height: 1000px;
+        background-color: #fff;
+        display: flex;
+        top: 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+    to{
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        width: 100%;
+        max-width: 500px;
+        height: 200px;
+        top: 0px;
+        flex-direction: column;
+        align-items: center;
     }
 }
