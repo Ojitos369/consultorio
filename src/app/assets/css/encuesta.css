@@ -55,6 +55,20 @@
     padding: 0px;
 }
 
+.eleccion{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.pregunta::placeholder{
+    color: #fff;
+}
+
+.input{
+    border: none;
+    outline: none;
+}
+
 .pregunta{
     width: 100%;
     max-width: 500px;
@@ -69,20 +83,6 @@
     -webkit-border-radius: 10px;
     margin-top: 50px;
     border-bottom: 2px solid rgb(234, 190, 63);
-}
-
-.eleccion{
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.pregunta::placeholder{
-    color: #fff;
-}
-
-.input{
-    border: none;
-    outline: none;
 }
 
 .pregunta{
