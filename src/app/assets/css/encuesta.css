@@ -15,7 +15,7 @@
 }
 
 .frase{
-    background-color: #fff;
+    background-color: #fff !important;
     color: #454142;
     margin-bottom: 30px;
     animation-name: frase;
@@ -29,8 +29,7 @@
 }
 
 .logo{
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(0,0,0,0) 100%);
+    background: rgb(255,255,255) !important;
     display: flex;
     position: sticky;
     width: 100%;
@@ -188,7 +187,6 @@ label{
     }
     to{
         font-size: medium;
-        border: solid 1px #fff;
     }
 }
 
@@ -197,167 +195,168 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 0%, #fff 0%, #454142 5%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
     }
     5%{
         background: #454142;
         background: linear-gradient(120deg, #454142 0%, #fff 5%, #454142 10%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px#fff;
     }
     10%{
         background: #454142;
         background: linear-gradient(120deg, #454142 5%, #fff 10%, #454142 15%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     15%{
         background: #454142;
         background: linear-gradient(120deg, #454142 10%, #fff 15%, #454142 20%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     20%{
         background: #454142;
         background: linear-gradient(120deg, #454142 15%, #fff 20%, #454142 25%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     25%{
         background: #454142;
         background: linear-gradient(120deg, #454142 20%, #fff 25%, #454142 30%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     30%{
         background: #454142;
         background: linear-gradient(120deg, #454142 25%, #fff 30%, #454142 35%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     35%{
         background: #454142;
         background: linear-gradient(120deg, #454142 30%, #fff 35%, #454142 40%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     40%{
         background: #454142;
         background: linear-gradient(120deg, #454142 35%, #fff 40%, #454142 45%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     45%{
         background: #454142;
         background: linear-gradient(120deg, #454142 40%, #fff 45%, #454142 50%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     50%{
         background: #454142;
         background: linear-gradient(120deg, #454142 45%, #fff 50%, #454142 55%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     55%{
         background: #454142;
         background: linear-gradient(120deg, #454142 50%, #fff 55%, #454142 60%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     60%{
         background: #454142;
         background: linear-gradient(120deg, #454142 55%, #fff 60%, #454142 65%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     65%{
         background: #454142;
         background: linear-gradient(120deg, #454142 60%, #fff 65%, #454142 70%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     70%{
         background: #454142;
         background: linear-gradient(120deg, #454142 65%, #fff 70%, #454142 75%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     75%{
         background: #454142;
         background: linear-gradient(120deg, #454142 70%, #fff 75%, #454142 80%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     80%{
         background: #454142;
         background: linear-gradient(120deg, #454142 75%, #fff 80%, #454142 85%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     85%{
         background: #454142;
         background: linear-gradient(120deg, #454142 80%, #fff 85%, #454142 90%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     90%{
         background: #454142;
         background: linear-gradient(120deg, #454142 85%, #fff 90%, #454142 95%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     95%{
         background: #454142;
         background: linear-gradient(120deg, #454142 90%, #fff 95%, #454142 100%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
     100%{
         background: #454142;
         background: linear-gradient(120deg, #454142 95%, #fff 100%, #454142 100%);
         -webkit-background-clip: text;
+        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
-        border: solid 1px #fff;
     }
 }
 

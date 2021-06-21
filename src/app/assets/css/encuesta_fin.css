@@ -22,3 +22,11 @@
 .input-eleccion:checked{
     visibility: visible;
 }
+
+.pregunta{
+    display: none;
+}
+
+.iniciales{
+    display: block;
+}

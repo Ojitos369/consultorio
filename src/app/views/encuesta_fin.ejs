@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/encuesta.css">
     <link rel="stylesheet" href="/css/fondo.css">
-    <link rel="stylesheet" href="/css/logo.css">
     <link rel="stylesheet" href="/css/encuesta_fin.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="/imagenes/logo-simple.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/encuesta_fin.js"></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <form action="<%= accion %>" method="POST" class="formulario container">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
-                    <div class="pregunta <%= preguntas[i].clase %>">
+                    <div id="<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %>" onclick="cambio('<%= preguntas[i].id %>')">
                     <%= preguntas[i].pregunta %>
                     <br>
                     <div class="eleccion">
@@ -35,15 +35,15 @@
                     </div>
                     </div>
                 <% }else if(preguntas[i].tipo == 'textarea'){%>
-                    <textarea id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></textarea>
+                    <textarea id="<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></textarea>
                     <br>
                 <% }else{ %>
-                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
+                    <input id="<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
                 <% } %>
                 <br>
             <% } %>
             <input name="id_encuesta" type="hidden" value="<%= seccion %>">
-            <input class="pregunta input enviar" type="submit" title="enviar">
+            <input id="enviar" class="pregunta input enviar" type="submit" title="enviar">
         </form>
         <div class="container container-qr" id="footer">
             <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
