@@ -22,7 +22,7 @@
         <form action="<%= accion %>" method="POST" class="formulario container">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'date'){ %>
-                    <label for="pregunta-<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %> cont_eleccion">
+                    <label for="pregunta-<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %>">
                         <%= preguntas[i].pregunta %> <br>
                         <input id="pregunta-<%= preguntas[i].id %>" class="input input-fecha"  name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
                     </label>

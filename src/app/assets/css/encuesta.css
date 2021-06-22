@@ -68,11 +68,12 @@
     align-content: center;
 }
 .cont_eleccion > input{
-    margin: 0 10% 0 25%;
+    margin: 0  0 0 30% ;
 }
 .cont_eleccion > span{
     width: 100%;
     text-align: left;
+    margin: 0 0 0 20%;
 }
 
 .eleccion{
