@@ -10,8 +10,12 @@
 }
 
 .img-logo{
+    position: relative;
+    left: -1000px;
     width: 100% !important; 
     height: 100%;
+    animation-name: img_logo;
+    animation-duration:3s;
 }
 
 .input{
@@ -21,14 +25,16 @@
 }
 
 .frase{
+    position: relative;
+    right: 1000px;
     background-color: #fff !important;
     color: #454142;
     margin-bottom: 30px;
-    animation-name: frase;
+    animation-name: frase, frase2;
     animation-duration:3s;
 }
 
-.frase{
+.frase3{
     animation-name: frase2;
     animation-duration:3s;
     animation-iteration-count: infinite;
@@ -45,8 +51,6 @@
     margin-bottom: 65px;
     flex-direction: column;
     align-items: center;
-    animation-name: logo_container;
-    animation-duration:3s;
 }
 
 .container{
@@ -186,6 +190,21 @@ label{
     background-color: #0000;
 }
 
+.formulario{
+    opacity: 0;
+    animation-name: form;
+    animation-duration:3s;
+    animation-delay: 3s;
+}
+
+@keyframes form {
+    form{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
 
 @keyframes en_input{
     from{
@@ -198,13 +217,21 @@ label{
     }
 }
 
+@keyframes img_logo{
+    from{
+        left: -1000px;
+    }
+    to{
+        left: 0px;
+    }
+}
 
 @keyframes frase{
     from{
-        font-size: xx-large;
+        right: -1000px;
     }
     to{
-        font-size: medium;
+        right: 0px;
     }
 }
 

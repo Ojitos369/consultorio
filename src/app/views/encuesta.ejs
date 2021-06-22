@@ -13,13 +13,13 @@
     <script src="/js/encuesta.js"></script>
 </head>
 
-<body>
+<body onload="animaciones()">
     <img src="/imagenes/fondo.jpeg" alt="" class="img-fondo">
     <div class="main-container" id="main-container">
         <div class="logo">
             <%- include('logo') %>
         </div>
-        <form action="<%= accion %>" method="POST" class="formulario container">
+        <form action="<%= accion %>" method="POST" id="formulario" class="formulario container">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'date'){ %>
                     <label for="pregunta-<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %>">
