@@ -59,6 +59,21 @@
     margin: 0px;
     padding: 0px;
 }
+.cont_eleccion{
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.cont_eleccion > input{
+    margin: 0 10% 0 25%;
+}
+.cont_eleccion > span{
+    width: 100%;
+    text-align: left;
+}
 
 .eleccion{
     margin-top: 20px;
