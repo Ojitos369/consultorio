@@ -14,6 +14,8 @@ function cambio(clase){
         pregunta_Actual.style.display = 'none';
         pregunta_Siguiente.style.display = 'block';
         let enviar = document.getElementById('enviar');
+        let instagram = document.getElementById('footer');
+        instagram.style.display = 'flex';
         enviar.style.display = 'block';
     }
     else{

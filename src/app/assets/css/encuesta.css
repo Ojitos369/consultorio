@@ -92,18 +92,6 @@
     margin: 0;
 }
 
-.pregunta:hover{
-    animation-name: en_input;
-    animation-duration: .3s;
-    background: #333;
-}
-
-.input-fecha:hover{
-    animation-name: en_input;
-    animation-duration: .3s;
-    background: #333;
-}
-
 .pregunta:focus{
     animation-name: en_input;
     animation-duration: .3s;
@@ -128,6 +116,15 @@ label{
     color: #fff;
     min-width: 250px;
     text-align: center;
+}
+
+.frase2{
+    width: 100%;
+    text-align: center;
+    top: -4px;
+    background-color: #fff;
+    padding-top: 10px;
+    margin-top: 0px;
 }
 
 .enviar{
@@ -169,6 +166,12 @@ label{
     height: 150px;
 }
 
+.caritas:hover{
+    color: #454142;
+    background-color: #0000;
+}
+
+
 @keyframes en_input{
     from{
         background: #333;
@@ -195,14 +198,12 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 0%, #fff 0%, #454142 5%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
     }
     5%{
         background: #454142;
         background: linear-gradient(120deg, #454142 0%, #fff 5%, #454142 10%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -210,7 +211,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 5%, #fff 10%, #454142 15%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -218,7 +218,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 10%, #fff 15%, #454142 20%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -226,7 +225,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 15%, #fff 20%, #454142 25%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -234,7 +232,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 20%, #fff 25%, #454142 30%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -242,7 +239,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 25%, #fff 30%, #454142 35%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -250,7 +246,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 30%, #fff 35%, #454142 40%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -258,7 +253,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 35%, #fff 40%, #454142 45%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -266,7 +260,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 40%, #fff 45%, #454142 50%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -274,7 +267,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 45%, #fff 50%, #454142 55%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -282,7 +274,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 50%, #fff 55%, #454142 60%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -290,7 +281,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 55%, #fff 60%, #454142 65%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -298,7 +288,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 60%, #fff 65%, #454142 70%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -306,7 +295,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 65%, #fff 70%, #454142 75%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -314,7 +302,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 70%, #fff 75%, #454142 80%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -322,7 +309,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 75%, #fff 80%, #454142 85%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -330,7 +316,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 80%, #fff 85%, #454142 90%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -338,7 +323,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 85%, #fff 90%, #454142 95%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -346,7 +330,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 90%, #fff 95%, #454142 100%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }
@@ -354,7 +337,6 @@ label{
         background: #454142;
         background: linear-gradient(120deg, #454142 95%, #fff 100%, #454142 100%);
         -webkit-background-clip: text;
-        text-shadow: #fff 1px 0;
         color: transparent;
         font-size: medium;
     }

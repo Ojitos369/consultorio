@@ -12,6 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/js/encuesta_fin.js"></script>
+    <script src="/js/encuesta.js"></script>
 </head>
 
 <body>
@@ -23,13 +24,13 @@
         <form action="<%= accion %>" method="POST" class="formulario container">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
-                    <div id="<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %>" onclick="cambio('<%= preguntas[i].id %>')">
+                    <div id="<%= preguntas[i].id %>" class="caritas pregunta <%= preguntas[i].clase %>">
                     <%= preguntas[i].pregunta %>
                     <br>
                     <div class="eleccion">
                     <% for(j=0; j<respuestas.length; j++){ %>
                         <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
-                                <label class="label-seleccion" for="respuesta<%= respuestas[j].id %>"><input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>"><img class="img-res" src="/imagenes/<%= respuestas[j].respuesta %>.png" alt="<%= respuestas[j].respuesta %>"></label>
+                                <label class="label-seleccion" for="respuesta<%= respuestas[j].id %>"><input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>"><img class="img-res" src="/imagenes/<%= respuestas[j].respuesta %>.png" alt="<%= respuestas[j].respuesta %>" onclick="cambio('<%= preguntas[i].id %>')"></label>
                         <% } %>
                     <% } %>
                     </div>
