@@ -60,7 +60,7 @@ module.exports = (app, datos) => {
         console.clear();
         console.log(respuesta);
         console.log('\n');
-        conexion.query(`insert into usuario (nombre) values ("${respuesta['17']}")`, (err, result) => {
+        conexion.query(`insert into usuario (nombre) values ("${respuesta['16']}")`, (err, result) => {
             let id_usuario = result['insertId'];
             for(elemento in respuesta){
                 if(elemento != "id_encuesta"){
