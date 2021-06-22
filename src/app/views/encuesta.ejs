@@ -39,11 +39,11 @@
                     </div>
                 <% }else if(preguntas[i].tipo == 'textarea'){%>
                     <textarea id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></textarea>
-                    <br>
+                    
                 <% }else{ %>
-                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input><br>
+                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input>
                 <% } %>
-                <br>
+                
             <% } %>
             <input name="id_encuesta" type="hidden" value="<%= seccion %>">
             <input class="pregunta input enviar" type="submit" title="enviar">

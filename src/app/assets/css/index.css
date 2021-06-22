@@ -40,9 +40,9 @@
 
 .container > .frase{
     color: #454142;
-    width: 30%;
     margin-bottom: 30px;
     font-size: xx-large;
+    text-align: center;
 }
 .container > .img-logo{
     width: 30%;
