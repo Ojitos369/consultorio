@@ -24,7 +24,7 @@
                 <% if(preguntas[i].tipo == 'date'){ %>
                     <label for="pregunta-<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %> cont_eleccion">
                         <%= preguntas[i].pregunta %> <br>
-                        <input id="pregunta-<%= preguntas[i].id %>" class="input input-fecha"  name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>">
+                        <input id="pregunta-<%= preguntas[i].id %>" class="input input-fecha"  name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>" required="">
                     </label>
                 <% }else if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
                     <div class="eleccion pregunta <%= preguntas[i].clase %>">
@@ -34,7 +34,7 @@
                     <% for(j=0; j<respuestas.length; j++){ %>
                         <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
                                 <label for="respuesta<%= respuestas[j].id %>" class="cont_eleccion">
-                                    <input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>">
+                                    <input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>" required="">
                                     <span><%= respuestas[j].respuesta %></span>
                                 </label>
                                 <br>
@@ -42,14 +42,14 @@
                     <% } %>
                     </div>
                 <% }else if(preguntas[i].tipo == 'textarea'){%>
-                    <textarea id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></textarea>
+                    <textarea id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></textarea>
                     
                 <% }else{ %>
-                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>"></input>
+                    <input id="pregunta-<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></input>
                 <% } %>
                 
             <% } %>
-            <input name="id_encuesta" type="hidden" value="<%= seccion %>">
+            <input name="id_encuesta" type="hidden" value="<%= seccion %>" required="">
             <input class="pregunta input enviar" type="submit" title="enviar">
         </form>
         <div class="container container-qr" id="footer">
