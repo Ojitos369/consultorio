@@ -1,4 +1,6 @@
 node_modules
 /src/app/assets/json/datos.json
+/src/app/assets/json/
 *.json
+src/app/assets/json/
 src/app/assets/json/datos.json
