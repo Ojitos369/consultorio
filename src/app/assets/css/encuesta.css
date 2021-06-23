@@ -13,7 +13,8 @@
     position: relative;
     left: -1000px;
     width: 100% !important; 
-    height: 100%;
+    max-width: 500px;
+    height: auto;
     animation-name: img_logo;
     animation-duration:3s;
 }
@@ -26,8 +27,9 @@
 
 .frase{
     position: relative;
-    right: 1000px;
-    background-color: #fff !important;
+    width: 100% !important; 
+    max-width: 500px;
+    right: -1000px;
     color: #454142;
     margin-bottom: 30px;
     animation-name: frase, frase2;
@@ -41,12 +43,11 @@
 }
 
 .logo{
-    background: rgb(255,255,255) !important;
     display: flex;
     position: sticky;
-    width: 100%;
+    width: 80%;
     max-width: 500px;
-    height: 270px;
+    height: auto;
     top: 0px;
     margin-bottom: 65px;
     flex-direction: column;
@@ -195,6 +196,23 @@ label{
     animation-name: form;
     animation-duration:3s;
     animation-delay: 3s;
+}
+
+.ocultar_form{
+    animation-name: ocultar;
+    animation-duration:2s;
+}
+.ocultar_form{
+    visibility: hidden;
+}
+
+@keyframes ocultar_form {
+    form{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
 
 @keyframes form {

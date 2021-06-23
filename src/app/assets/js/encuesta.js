@@ -1,13 +1,7 @@
 window.onscroll = function() {
     let frase = document.getElementById("frase");
     let y = window.scrollY;
-    if(y > 0){
-        frase.classList.remove("frase3");
-        frase.classList.add("frase2");
-    }else{
-        frase.classList.add("frase3");
-        frase.classList.remove("frase2");
-    }
+    verificar_scroll();
 };
 
 function animaciones(){
@@ -25,4 +19,20 @@ function animaciones(){
         let formulario = document.getElementById("formulario");
         formulario.style.opacity = 1;
     },6000);
+}
+
+function verificar_scroll(){
+    let ini = parseInt(inicio);
+    let fi = parseInt(fin);
+    let logo = document.getElementById(`logo`);
+    for(i=ini; i<=fi; i++){
+        let elemento = document.getElementById(`cont_${i}`);
+        let coords = elemento.getBoundingClientRect();
+        console.log(`cont_${i}: `+coords.top);
+        if(coords.top < (logo.clientHeight + 30)){
+            elemento.classList.add("ocultar_form");
+        }else{
+            elemento.classList.remove("ocultar_form");
+        }
+    }
 }
