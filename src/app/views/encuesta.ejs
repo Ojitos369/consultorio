@@ -25,7 +25,7 @@
         <div id="logo" class="logo">
             <%- include('logo') %>
         </div>
-        <form action="<%= accion %>" method="POST" id="formulario" class="formulario container">
+        <form action="<%= accion %>" method="POST" id="formulario" class="formulario container" autocomplete="off">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'date'){ %>
                     <label for="pregunta-<%= preguntas[i].id %>" id="cont_<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %>">
