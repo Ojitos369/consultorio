@@ -1,5 +1,6 @@
 const db = require('../../config/conexion');
 const path = require('path');
+const { stringify } = require('querystring');
 
 module.exports = (app, datos) => {
     const conexion = db(datos);
@@ -40,15 +41,29 @@ module.exports = (app, datos) => {
         console.clear();
         console.log(respuesta);
         console.log('\n');
-        conexion.query(`insert into usuario (nombre) values ("${respuesta['1']}")`, (err, result) => {
-            let id_usuario = result['insertId'];
-            for(elemento in respuesta){
-                if(elemento != "id_encuesta"){
-                    conexion.query(`insert into contestado (id_usuario, id_encuesta, id_pregunta, respuesta) values (${id_usuario}, ${respuesta["id_encuesta"]}, ${elemento}, "${respuesta[elemento]}")`, (error, res_exitoso) => {
-                        console.log('Insertado');
-                    });
-                }else{
-                    console.log('id_encuesta');
+        let query = `insert into usuario (nombre) values ("${respuesta['input_1']}")`;
+        conexion.query(query, (err, result) => {
+            if(err){
+                console.log(query);
+                console.log(`error: ${error}`)
+            }else{
+                let id_usuario = result['insertId'];
+                for(elemento in respuesta){
+                    if(elemento != "id_encuesta"){
+                        let id_pregunta = String(elemento).replace('input_','');
+                        query = `insert into contestado (id_usuario, id_encuesta, id_pregunta, respuesta) values (${id_usuario}, ${respuesta["id_encuesta"]}, ${id_pregunta}, "${respuesta[elemento]}")`;
+                        conexion.query(query, (error, res_exitoso) => {
+                            if(error){
+                                console.log(query);
+                                console.log(`error: ${error}`)
+                            }else{
+                                console.log(query);
+                                console.log('Insertado');
+                            }
+                        });
+                    }else{
+                        console.log('id_encuesta');
+                    }
                 }
             }
         });

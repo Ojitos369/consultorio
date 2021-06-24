@@ -1,0 +1,55 @@
+.pregunta{
+    display: none;
+}
+
+.siguiente{
+    display: none;
+}
+
+.iniciales{
+    display: block;
+}
+
+.container-qr{
+    display: none;
+}
+
+.animacion_arriba{
+    position: relative;
+    animation-name: animacion_arriba;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.animacion_abajo{
+    position: relative;
+    animation-name: animacion_abajo;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animacion_arriba{
+    from{
+        opacity: 1;
+        top: 0;
+        display: block;
+    }
+    to{
+        opacity: 0;
+        top: -50px;
+        display: none;
+    }
+}
+
+@keyframes animacion_abajo{
+    from{
+        opacity: 0;
+        bottom: -50px;
+        display: none;
+    }
+    to{
+        opacity: 1;
+        bottom: 0;
+        display: block;
+    }
+}
