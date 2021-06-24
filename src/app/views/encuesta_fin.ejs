@@ -13,33 +13,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/js/encuesta_fin.js"></script>
     <script src="/js/encuesta.js"></script>
+    <script>
+        console.log('<%= preguntas.length + 15 %>');
+        let checar = false;
+        let inicio = '16';
+        let encuesta = 'final';
+        let fin = '<%= preguntas.length + 15 %>';
+    </script>
 </head>
 
 <body onload="animaciones()">
     <img src="/imagenes/fondo.jpeg" alt="" class="img-fondo">
     <div class="main-container" id="main-container">
-        <div class="logo">
+        <div id="logo" class="logo">
             <%- include('logo') %>
         </div>
         <form action="<%= accion %>" method="POST" id="formulario" class="formulario container">
             <% for(i=0; i<preguntas.length; i++){ %>
                 <% if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
-                    <div id="<%= preguntas[i].id %>" class="caritas pregunta <%= preguntas[i].clase %>">
+                    <div id="cont_<%= preguntas[i].id %>" class="caritas pregunta <%= preguntas[i].clase %>">
                     <%= preguntas[i].pregunta %>
                     <br>
                     <div class="eleccion">
                     <% for(j=0; j<respuestas.length; j++){ %>
                         <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
-                                <label class="label-seleccion" for="respuesta<%= respuestas[j].id %>"><input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>" required=""><img class="img-res" src="/imagenes/<%= respuestas[j].respuesta %>.png" alt="<%= respuestas[j].respuesta %>" onclick="cambio('<%= preguntas[i].id %>')"></label>
+                                <label id="cont_<%= preguntas[i].id %>" class="label-seleccion" for="respuesta<%= respuestas[j].id %>"><input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>" required=""><img class="img-res" src="/imagenes/<%= respuestas[j].respuesta %>.png" alt="<%= respuestas[j].respuesta %>" onclick="cambio('<%= preguntas[i].id %>')"></label>
                         <% } %>
                     <% } %>
                     </div>
                     </div>
                 <% }else if(preguntas[i].tipo == 'textarea'){%>
-                    <textarea id="<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></textarea>
+                    <textarea id="cont_<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></textarea>
                     <br>
                 <% }else{ %>
-                    <input id="<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></input><br>
+                    <input id="cont_<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></input><br>
                 <% } %>
                 <br>
             <% } %>
