@@ -5,12 +5,14 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/encuesta.css">
+    <link rel="stylesheet" href="/css/encuesta_inicial.css">
     <link rel="stylesheet" href="/css/fondo.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="/imagenes/logo-simple.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/js/encuesta.js"></script>
+    <script src="/js/encuesta_inicial.js"></script>
     <script>
         let checar = true;
         let inicio = '1';
@@ -30,7 +32,7 @@
                 <% if(preguntas[i].tipo == 'date'){ %>
                     <label for="pregunta-<%= preguntas[i].id %>" id="cont_<%= preguntas[i].id %>" class="pregunta <%= preguntas[i].clase %>">
                         <%= preguntas[i].pregunta %> <br>
-                        <input id="pregunta-<%= preguntas[i].id %>" class="input input-fecha"  name="<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>" required="">
+                        <input id="pregunta-<%= preguntas[i].id %>" class="input_<%= preguntas[i].id %> input input-fecha"  name="input_<%= preguntas[i].id %>" type="<%= preguntas[i].tipo %>" required="">
                     </label>
                 <% }else if(preguntas[i].tipo == 'checkbox' || preguntas[i].tipo == 'radio'){ %>
                     <div id="cont_<%= preguntas[i].id %>" class="eleccion pregunta <%= preguntas[i].clase %>">
@@ -40,7 +42,7 @@
                     <% for(j=0; j<respuestas.length; j++){ %>
                         <% if(respuestas[j].id_pregunta == preguntas[i].id){ %>
                                 <label for="respuesta<%= respuestas[j].id %>" class="cont_eleccion">
-                                    <input class="input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="<%= preguntas[i].id %>" required="">
+                                    <input class="input_<%= preguntas[i].id %> input input-eleccion" id="respuesta<%= respuestas[j].id %>" type="<%= preguntas[i].tipo %>" value="<%= respuestas[j].respuesta %>" name="input_<%= preguntas[i].id %>" required="">
                                     <span><%= respuestas[j].respuesta %></span>
                                 </label>
                                 <br>
@@ -48,15 +50,17 @@
                     <% } %>
                     </div>
                 <% }else if(preguntas[i].tipo == 'textarea'){%>
-                    <textarea id="cont_<%= preguntas[i].id %>" class="pregunta input input-textarea <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></textarea>
+                    <textarea id="cont_<%= preguntas[i].id %>" class="input_<%= preguntas[i].id %> pregunta input input-textarea <%= preguntas[i].clase %>" name="input_<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></textarea>
                     
                 <% }else{ %>
-                    <input id="cont_<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></input>
+                    <input id="cont_<%= preguntas[i].id %>" class="pregunta input input-texto <%= preguntas[i].clase %>" name="input_<%= preguntas[i].id %>" placeholder="<%= preguntas[i].pregunta %>" type="<%= preguntas[i].tipo %>" required=""></input>
                 <% } %>
-                
+                <div class="siguiente <%= preguntas[i].clase %>" id="siguiente_<%= preguntas[i].id %>" onclick="preguntas('<%= preguntas[i].id %>');">
+                    <img src="/imagenes/siguiente.png" alt="">
+                </div>
             <% } %>
             <input name="id_encuesta" type="hidden" value="<%= seccion %>" required="">
-            <input class="pregunta input enviar" type="submit" title="enviar">
+            <input id="enviar" class="pregunta input enviar" type="submit" title="enviar">
         </form>
         <div class="container container-qr" id="footer">
             <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
