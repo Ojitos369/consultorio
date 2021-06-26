@@ -143,10 +143,10 @@ function bajarxls(tableID, filename=''){
     let pal = document.getElementById("buscar-pal").value;
     if (pal != '') pal = '-'+pal;
     filename = filename+pal;
-    var downloadLink;
-    var dataType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
-    var tableSelect = document.getElementById(tableID);
-    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    let downloadLink;
+    let dataType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+    let tableSelect = document.getElementById(tableID);
+    let tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
 
     // Specify file name
     filename = filename?filename+'.xlsx':'excel_data.xlsx';
@@ -157,7 +157,7 @@ function bajarxls(tableID, filename=''){
     document.body.appendChild(downloadLink);
 
     if(navigator.msSaveOrOpenBlob){
-        var blob = new Blob(['ufeff', tableHTML], {
+        let blob = new Blob(['ufeff', tableHTML], {
             type: dataType
         });
         navigator.msSaveOrOpenBlob( blob, filename);
@@ -171,4 +171,39 @@ function bajarxls(tableID, filename=''){
         //triggering the function
         downloadLink.click();
     }
+}
+
+function bajarCsv(tableID, filename=''){
+    let pal = document.getElementById("buscar-pal").value;
+    if (pal != '') pal = '-'+pal;
+    filename = filename+pal+'.csv';
+    separator = ','
+
+    // Select rows from table_id
+    let rows = document.querySelectorAll('table#' + tableID + ' tr');
+    // Construct csv
+    let csv = [];
+    for (let i = 0; i < rows.length; i++) {
+        let row = [], cols = rows[i].querySelectorAll('td, th');
+        for (let j = 0; j < cols.length; j++) {
+            // Clean innertext to remove multiple spaces and jumpline (break csv)
+            let data = cols[j].innerText.replace(/(\r\n|\n|\r)/gm, '').replace(/(\s\s)/gm, ' ')
+            // Escape double-quote with double-double-quote (see https://stackoverflow.com/questions/17808511/properly-escape-a-double-quote-in-csv)
+            data = data.replace(/"/g, '""');
+            // Push escaped string
+            row.push('"' + data + '"');
+        }
+        csv.push(row.join(separator));
+    }
+    let csv_string = csv.join('\n');
+    // Download it
+    //let filename = 'export_' + table_id + '_' + new Date().toLocaleDateString() + '.csv';
+    let link = document.createElement('a');
+    link.style.display = 'none';
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv_string));
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
