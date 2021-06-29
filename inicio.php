@@ -95,3 +95,6 @@ $preguntas = $conexion->query($query);
     
 </body>
 </html>
+<?php
+$conexion->close();
+?>
