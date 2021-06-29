@@ -34,7 +34,7 @@ $preguntas = $conexion->query($query);
         <div id="logo" class="logo">
             <?php require('logo.php'); ?>
         </div>
-        <form action="respuestas_salida.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
+        <form action="r_fin.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
             <?php 
                 while($pregunta = $preguntas->fetch_assoc()):
                     $query = "select * from respuestas";
