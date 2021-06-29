@@ -1,0 +1,2 @@
+<img id="img-logo" src="./imagenes/logo-nombre.png" alt="" class="img-logo">
+<p id="frase" class="frase">"Give yourself care ritual a professional upgrade"</p>
