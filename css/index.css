@@ -1,5 +1,6 @@
 *{
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
 }
 
 .protector{
@@ -18,6 +19,9 @@
 .protector > .img-logo{
     width: 50%;
 }
+.protector > .frase{
+    width: 50%;
+}
 
 
 .frase{
@@ -27,26 +31,36 @@
 }
 
 .container{
+    position: relative;
     top: 0;
     right: 0;
     left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.logo{
+    position: relative;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 20px;
-    height: 80%;
+    width: 30%;
 }
 
-.container > .frase{
+.logo > .frase{
     color: #454142;
     margin-bottom: 30px;
     font-size: xx-large;
     text-align: center;
 }
-.container > .img-logo{
-    width: 30%;
-    height: 350px;
+.logo > .img-logo{
+    height: auto;
 }
 
 .encuestas{
@@ -175,7 +189,7 @@
         font-size: xx-large;
     }
     60%{
-        background: #454142;
+        background: #454142;        
         background: linear-gradient(120deg, #454142 55%, #fff 60%, #454142 65%);
         -webkit-background-clip: text;
         color: transparent;
@@ -236,5 +250,44 @@
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .encuesta{
+        padding-top: 3%;
+        width: 40%;
+        height: 70px;
+        font-size: large;
+    }
+    .encuesta:hover{
+        padding-top: 34px;
+        padding-bottom: 10px;
+        width: 33%;
+        height: 100px;
+        transition-duration: 1s;
+    }
+}
+
+@media only screen and (max-width: 740px){
+    .encuesta{
+        padding-top: 10%;
+        width: 100%;
+        min-width: 150px;
+        height: 80px;
+        font-size: large;
+        margin: 0;
+    }
+    .encuesta:hover{
+        padding: 12% 0;
+        padding-bottom: 10px;
+        width: 33%;
+        height: 100px;
+        transition-duration: 1s;
+    }
+    .encuestas{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
     }
 }

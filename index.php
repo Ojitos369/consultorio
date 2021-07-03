@@ -16,10 +16,12 @@
 <body onload="inicio()">
     <img src="./imagenes/fondo.jpeg" alt="" id="img_fondo" class="img-fondo">
     <div id="protector" class="protector" onclick="ocultar()">
-    <?php require('logo.php'); ?>
+        <?php require('logo.php'); ?>
     </div>
     <div class="container">
-        <?php require('logo.php'); ?>
+        <div class="logo">
+            <?php require('logo.php'); ?>
+        </div>
         <div class="encuestas">
             <a href="./inicio.php" class="encuesta inicial">Encuesta Inicial</a><br>
             <a href="./fin.php" class="encuesta final">Encuesta Final</a>

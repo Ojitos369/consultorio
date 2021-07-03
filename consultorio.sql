@@ -1,24 +1,22 @@
-DROP DATABASE IF EXISTS `consultorio`;
-CREATE DATABASE `consultorio`;
-USE `consultorio`;
-----------USUARIO---------
+--DROP DATABASE IF EXISTS `consultorio`;
+--CREATE DATABASE `consultorio`;
+--USE `consultorio`;
+
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
-----------ENCUESTA---------
 DROP TABLE IF EXISTS `encuesta`;
 CREATE TABLE `encuesta` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(500) NOT NULL,
   `descripcion` varchar(5000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
-----------SECCION---------
 DROP TABLE IF EXISTS `seccion`;
 CREATE TABLE `seccion` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -29,9 +27,8 @@ CREATE TABLE `seccion` (
   PRIMARY KEY (`id`),
   KEY `id_encuesta` (`id_encuesta`),
   CONSTRAINT `seccion_ibfk_1` FOREIGN KEY (`id_encuesta`) REFERENCES `encuesta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
-----------PREGUNTAS---------
 DROP TABLE IF EXISTS `preguntas`;
 CREATE TABLE `preguntas` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -42,9 +39,8 @@ CREATE TABLE `preguntas` (
   PRIMARY KEY (`id`),
   KEY `id_seccion` (`id_seccion`),
   CONSTRAINT `preguntas_ibfk_1` FOREIGN KEY (`id_seccion`) REFERENCES `seccion` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
-----------RESPUESTAS---------
 DROP TABLE IF EXISTS `respuestas`;
 CREATE TABLE `respuestas` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -54,9 +50,8 @@ CREATE TABLE `respuestas` (
   PRIMARY KEY (`id`),
   KEY `id_pregunta` (`id_pregunta`),
   CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
-----------CONTESTADO---------
 DROP TABLE IF EXISTS `contestado`;
 CREATE TABLE `contestado` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -71,7 +66,7 @@ CREATE TABLE `contestado` (
   CONSTRAINT `contestado_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `contestado_ibfk_2` FOREIGN KEY (`id_encuesta`) REFERENCES `encuesta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `contestado_ibfk_3` FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 
 LOCK TABLES `encuesta` WRITE;
