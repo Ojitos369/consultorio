@@ -7,9 +7,9 @@ module.exports = (app, datos) => {
     app.get('/inicial', (req, res) => {
         conexion.query('select * from preguntas where preguntas.id_seccion in (select id from seccion where seccion.id_encuesta=1)', (err, preguntas) => {
             conexion.query('select * from respuestas', (err, respuestas) => {
-                console.clear();
+                /* console.clear();
                 console.log('preguntas');
-                console.log(preguntas);
+                console.log(preguntas); */
                 res.render('encuesta',{
                     preguntas: preguntas,
                     respuestas: respuestas,
@@ -23,9 +23,9 @@ module.exports = (app, datos) => {
     app.get('/final', (req, res) => {
         conexion.query('select * from preguntas where preguntas.id_seccion in (select id from seccion where seccion.id_encuesta=2)', (err, preguntas) => {
             conexion.query('select * from respuestas', (err, respuestas) => {
-                console.clear();
+                /* console.clear();
                 console.log('preguntas');
-                console.log(preguntas);
+                console.log(preguntas); */
                 res.render('encuesta_fin',{
                     preguntas: preguntas,
                     respuestas: respuestas,
@@ -38,13 +38,13 @@ module.exports = (app, datos) => {
 
     app.post('/respuesta_entrada', (req, res) => {
         const respuesta = req.body;
-        console.clear();
+        /* console.clear();
         console.log(respuesta);
-        console.log('\n');
+        console.log('\n'); */
         let query = `insert into usuario (nombre) values ("${respuesta['input_1']}")`;
         conexion.query(query, (err, result) => {
             if(err){
-                console.log(query);
+                //console.log(query);
                 console.log(`error: ${error}`)
             }else{
                 let id_usuario = result['insertId'];
@@ -58,7 +58,7 @@ module.exports = (app, datos) => {
                                 console.log(`error: ${error}`)
                             }else{
                                 console.log(query);
-                                console.log('Insertado');
+                                console.log('correcto');
                             }
                         });
                     }else{
@@ -72,18 +72,18 @@ module.exports = (app, datos) => {
 
     app.post('/respuesta_salida', (req, res) => {
         const respuesta = req.body;
-        console.clear();
+        /* console.clear();
         console.log(respuesta);
-        console.log('\n');
+        console.log('\n'); */
         conexion.query(`insert into usuario (nombre) values ("${respuesta['16']}")`, (err, result) => {
             let id_usuario = result['insertId'];
             for(elemento in respuesta){
                 if(elemento != "id_encuesta"){
                     conexion.query(`insert into contestado (id_usuario, id_encuesta, id_pregunta, respuesta) values (${id_usuario}, ${respuesta["id_encuesta"]}, ${elemento}, "${respuesta[elemento]}")`, (error, res_exitoso) => {
-                        console.log('Insertado');
+                        //console.log('Insertado');
                     });
                 }else{
-                    console.log('id_encuesta');
+                    console.log('fin');
                 }
             }
         });

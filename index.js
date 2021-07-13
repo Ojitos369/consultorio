@@ -5,5 +5,6 @@ require('./src/app/routes/news')(app,datos);
 
 // iniciar el servidor
 app.listen(app.get('port'), () => {
+    console.clear()
     console.log('Corriendo servidor en puerto', app.get('port'));
 });
