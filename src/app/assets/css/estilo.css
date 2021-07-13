@@ -20,7 +20,6 @@ input::placeholder{
 }
 
 .inicial{
-    background-color: pink;
     border: 2px solid grey;
     border-radius: 10px;
     box-shadow: 2px 4px 10px 0px black;
