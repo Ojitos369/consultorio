@@ -34,12 +34,12 @@
 }
 
 .caritas{
-    color: #454142;
+    color: #fff;
     background-color: #0000;
 }
 
 .caritas:hover{
-    color: #454142;
+    color: #fff;
     background-color: #0000;
 }
 
@@ -48,5 +48,5 @@
 }
 
 .logo{
-    background-color: #fff;
+    background-color: transparent;
 }
