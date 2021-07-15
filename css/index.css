@@ -105,148 +105,148 @@
 
 @keyframes frase{
     0%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 0%, #fff 0%, #454142 5%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 0%, #454142 0%, #fff 5%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     5%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 0%, #fff 5%, #454142 10%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 0%, #454142 5%, #fff 10%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     10%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 5%, #fff 10%, #454142 15%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 5%, #454142 10%, #fff 15%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     15%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 10%, #fff 15%, #454142 20%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 10%, #454142 15%, #fff 20%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     20%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 15%, #fff 20%, #454142 25%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 15%, #454142 20%, #fff 25%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     25%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 20%, #fff 25%, #454142 30%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 20%, #454142 25%, #fff 30%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     30%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 25%, #fff 30%, #454142 35%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 25%, #454142 30%, #fff 35%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     35%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 30%, #fff 35%, #454142 40%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 30%, #454142 35%, #fff 40%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     40%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 35%, #fff 40%, #454142 45%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 35%, #454142 40%, #fff 45%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     45%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 40%, #fff 45%, #454142 50%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 40%, #454142 45%, #fff 50%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     50%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 45%, #fff 50%, #454142 55%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 45%, #454142 50%, #fff 55%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     55%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 50%, #fff 55%, #454142 60%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 50%, #454142 55%, #fff 60%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     60%{
-        background: #454142;        
-        background: linear-gradient(120deg, #454142 55%, #fff 60%, #454142 65%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 55%, #454142 60%, #fff 65%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     65%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 60%, #fff 65%, #454142 70%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 60%, #454142 65%, #fff 70%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     70%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 65%, #fff 70%, #454142 75%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 65%, #454142 70%, #fff 75%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     75%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 70%, #fff 75%, #454142 80%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 70%, #454142 75%, #fff 80%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     80%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 75%, #fff 80%, #454142 85%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 75%, #454142 80%, #fff 85%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     85%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 80%, #fff 85%, #454142 90%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 80%, #454142 85%, #fff 90%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     90%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 85%, #fff 90%, #454142 95%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 85%, #454142 90%, #fff 95%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     95%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 90%, #fff 95%, #454142 100%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 90%, #454142 95%, #fff 100%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;
     }
     100%{
-        background: #454142;
-        background: linear-gradient(120deg, #454142 95%, #fff 100%, #454142 100%);
+        background: #fff;
+        background: linear-gradient(120deg, #fff 95%, #454142 100%, #fff 100%);
         -webkit-background-clip: text;
         color: transparent;
         font-size: xx-large;

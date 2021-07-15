@@ -30,6 +30,7 @@ $preguntas = $conexion->query($query);
 
 <body onload="animaciones()">
     <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo">
+    <div class="total">
     <div class="main-container" id="main-container">
         <div id="logo" class="logo">
             <?php require('logo.php'); ?>
@@ -92,7 +93,7 @@ $preguntas = $conexion->query($query);
             <img src="./imagenes/qr.png" alt="" class="instagram qr">
         </div>
     </div>
-    
+    </div>
 </body>
 </html>
 <?php

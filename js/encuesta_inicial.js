@@ -29,18 +29,18 @@ function preguntas(numero){
                 qr.classList.add('animacion_abajo');
             }
             elemento.classList.add('animacion_arriba');
-            siguiente_act.classList.add('animacion_arriba');
+            //siguiente_act.classList.add('animacion_arriba');
             setTimeout(() => {
                 elemento.style.display = 'none';
                 siguiente_act.style.display = 'none';
                 siguiente.classList.add('animacion_abajo');
-                siguiente_sig.classList.add('animacion_abajo');
+                //siguiente_sig.classList.add('animacion_abajo');
                 siguiente.style.display = 'block';
                 if(!final){
                     siguiente_sig.style.display = 'block';
                 }
                 elemento.classList.remove('animacion_arriba');
-                siguiente_act.classList.remove('animacion_arriba');
+                //siguiente_act.classList.remove('animacion_arriba');
                 setTimeout(() => {
                     if(final){
                         enviar.style.display = 'block';
@@ -49,7 +49,7 @@ function preguntas(numero){
                         qr.classList.remove('animacion_abajo');
                     }
                     siguiente.classList.remove('animacion_abajo');
-                    siguiente_sig.classList.remove('animacion_abajo');
+                    //siguiente_sig.classList.remove('animacion_abajo');
                 }, 1000);
             }, 1000);
         }

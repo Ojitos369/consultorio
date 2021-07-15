@@ -6,6 +6,12 @@
     display: none;
 }
 
+.siguiente{
+    width: 50px;
+    align-self: flex-end;
+    margin-right: 30%;
+}
+
 .iniciales{
     display: block;
 }
