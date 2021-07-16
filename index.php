@@ -12,19 +12,20 @@
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/fondo.js"></script>
+    <script src="./js/index.js"></script> 
 </head>
-<body onload="inicio()">
+<body onload="inicio(); ajustar();">
     <img src="./imagenes/fondo.jpeg" alt="" id="img_fondo" class="img-fondo">
     <div id="protector" class="protector" onclick="ocultar()">
         <?php require('logo.php'); ?>
     </div>
-    <div class="container">
+    <div id="container" class="container">
         <div class="logo">
             <?php require('logo.php'); ?>
         </div>
-        <div class="encuestas">
-            <a href="./inicio.php" class="encuesta inicial">Encuesta Inicial</a><br>
-            <a href="./fin.php" class="encuesta final">Encuesta Final</a>
+        <div class="encuestas" id="encuestas" >
+            <a href="./inicio.php" id="encuesta_inicial" class="encuesta inicial">Encuesta Inicial</a><br>
+            <a href="./fin.php" id="encuesta_final" class="encuesta final">Encuesta Final</a>
         </div>
     </div>
 </body>
