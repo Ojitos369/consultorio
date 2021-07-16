@@ -41,9 +41,14 @@
     display: flex;
     position: sticky;
     width: 100%;
-    margin-bottom: 65px;
     flex-direction: column;
     align-items: center;
+}
+
+.frase3{
+    animation-name: frase2;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
 }
 
 .container{

@@ -89,7 +89,7 @@ $preguntas = $conexion->query($query);
             <div class="container container-qr" id="footer">
                 <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
                 <br>
-                <img src="./imagenes/qr.png" alt="" class="instagram qr">
+                <img src="./imagenes/qr.png" alt="" class="instagram qr" id="img-qr">
             </div>
         </form>
     </div>

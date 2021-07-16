@@ -70,7 +70,8 @@ $preguntas = $conexion->query($query);
             <input id="enviar" class="pregunta input enviar" type="submit" title="enviar">
             <div class="container container-qr" id="footer">
             <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
-            <img src="./imagenes/qr.png" alt="" class="instagram qr">
+            <br>
+            <img src="./imagenes/qr.png" alt="" class="instagram qr" id="img-qr">
         </div>
         </form>
     </div>
