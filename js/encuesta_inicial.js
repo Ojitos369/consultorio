@@ -54,5 +54,8 @@ function preguntas(numero){
             }, 1000);
         }
     }
-
+    let opiniones = document.getElementsByClassName("opinion")
+    for(i=0; i<opiniones.length; i++){
+        opiniones[i].style.height = "150px"
+    }
 }

@@ -1,45 +1,6 @@
-window.onscroll = function() {
-    if(encuesta = 'incial'){
-        let frase = document.getElementById("frase");
-        let y = window.scrollY;
-        if (checar){
-            verificar_scroll();
-        }
-    }
-    else if(encuest = 'final'){
-        let frase = document.getElementById("frase");
-        let y = window.scrollY;
-        if(y > 0){
-            frase.classList.remove("frase3");
-            frase.classList.add("frase2");
-        }else{
-            frase.classList.add("frase3");
-            frase.classList.remove("frase2");
-        }
-    }
-};
-
-window.addEventListener("resize", function(event){
-    let imagen = document.getElementById('img-logo');
-    let alto = screen.height/4;
-    let largo = alto * 3;
-    imagen.style.height = (`${alto}px`);
-    imagen.style.width = (`${largo}px`);
-    /* let ancho_total = screen.width;
-    let ancho = (imagen.clientWidth / ancho_total * 100) * 2;
-    console.clear();
-    console.log(`ancho %: ${ancho}`);
-    console.log(`ancho total: ${ancho_total}`);
-    let ini = parseInt(inicio);
-    let fi = parseInt(fin);
-    let frase = document.getElementById('frase');
-    frase.style.width = (`${ancho}%`);
-    for(i=ini; i<=fi; i++){
-        let elemento = document.getElementById(`cont_${i}`);
-        elemento.style.width = (`${ancho}%`);
-    } */
-});
-
+/* window.onscroll = function() {
+    
+}: */
 
 function animaciones(){
     let imagen = document.getElementById('img-logo');
@@ -64,17 +25,67 @@ function animaciones(){
     },6000);
 }
 
-function verificar_scroll(){
-    let ini = parseInt(inicio);
-    let fi = parseInt(fin);
-    let logo = document.getElementById(`logo`);
-    for(i=ini; i<=fi; i++){
-        let elemento = document.getElementById(`cont_${i}`);
-        let coords = elemento.getBoundingClientRect();
-        if(coords.top < (logo.clientHeight)){
-            elemento.classList.add("ocultar_form");
-        }else{
-            elemento.classList.remove("ocultar_form");
-        }
+// function for logo style
+function logo(){
+    let alto = screen.height;
+    let ancho = screen.width;
+    let porcentaje_arriba = alto * 0.1;
+    let porcentaje_abajo = alto * 0.1;
+    let imagen = document.getElementById('img-logo');
+    let container =  document.getElementById('main-container');
+    let logo =  document.getElementById('logo');
+    let frase = document.getElementById('frase')
+    // border to container
+    //container.style.border = "#fff 1px solid";
+    logo.style.border = "#00f 1px solid";
+    let total =  alto - porcentaje_abajo - porcentaje_arriba;
+
+    // estilo imagen
+    imagen.style.height = `${total * 0.35}px`
+    imagen.style.top = 0;
+    imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
+
+    // height to container
+    container.style.position = 'fixed';
+    container.style.height = `${total}px`;
+    container.style.top = `${porcentaje_arriba * 0.9}px`;
+    // margin bottom to frase
+    frase.style.marginBottom = `10px`;
+    if(ancho >= 1120){
+        frase.style.fontSize = "20px";
+    }else if (ancho < 1120 && ancho >= 800){
+        frase.style.fontSize = "18px";
+    }else{
+        frase.style.fontSize = "15px";
     }
 }
+
+function formulario(){
+    let formulario =  document.getElementById('formulario');
+    let container =  document.getElementById('main-container');
+    let comentario = document.getElementsByClassName('opinion')[0];
+
+    // get height of container
+    let alto = container.offsetHeight;
+
+    let alto_form = alto * 0.54
+
+    //border to formulario
+    formulario.style.border = "#0f0 1px solid";
+    formulario.style.height = `${alto_form}px`;
+    formulario.style.paddingBottom = `${alto * 0.1}px`;
+
+    // set padding to comentario
+    comentario.style.paddingBottom = `${alto * 0.1}px`;    
+    //comentario.style.border = "#f00 1px solid";
+
+}
+
+function tamanios(){
+    logo();
+    formulario();
+}
+
+window.addEventListener("resize", function(event){
+    tamanios();
+});

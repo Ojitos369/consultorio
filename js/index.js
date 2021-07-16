@@ -43,7 +43,7 @@ function principal(){
     imagen.style.top = 0;
     imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
     // set new top of the container
-    container.style.top = `${porcentaje_arriba * 0.6}px`;
+    container.style.top = `${porcentaje_arriba * 1.5}px`;
     // get encuestas from the DOM by id "encuestas"
     let encuestas = document.getElementById("encuestas");
     // set matgin top of the encuestas
@@ -73,6 +73,7 @@ function principal(){
     }
     // set border to encuestas
     //encuestas.style.border = `1px solid #c00`;
+    
     console.clear();
     console.log(`alto: ${alto}`);
     console.log(`ancho: ${ancho}`);

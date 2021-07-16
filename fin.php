@@ -28,7 +28,7 @@ $preguntas = $conexion->query($query);
     </script>
 </head>
 
-<body onload="animaciones()">
+<body onload="animaciones(); tamanios();">
     <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo">
     <div class="main-container" id="main-container">
         <div id="logo" class="logo">
@@ -68,11 +68,11 @@ $preguntas = $conexion->query($query);
             ?>
             <input name="id_encuesta" type="hidden" value="2">
             <input id="enviar" class="pregunta input enviar" type="submit" title="enviar">
-        </form>
-        <div class="container container-qr" id="footer">
+            <div class="container container-qr" id="footer">
             <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
             <img src="./imagenes/qr.png" alt="" class="instagram qr">
         </div>
+        </form>
     </div>
     
 </body>

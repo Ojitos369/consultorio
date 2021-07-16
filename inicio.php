@@ -28,7 +28,7 @@ $preguntas = $conexion->query($query);
     </script>
 </head>
 
-<body onload="animaciones()">
+<body onload="animaciones(); tamanios();">
     <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo">
     <div class="main-container" id="main-container">
         <div id="logo" class="logo">

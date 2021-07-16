@@ -16,7 +16,7 @@
     position: relative;
     top: 0px;
     left: -1000px;
-    max-width: 500px;
+    width: auto;
     animation-name: img_logo;
     animation-duration:3s;
 }
@@ -31,27 +31,16 @@
     position: relative;
     text-align: center;
     width: 100% !important; 
-    max-width: 500px;
     right: -1000px;
     color: #454142;
-    margin-bottom: 30px;
     animation-name: frase, frase2;
     animation-duration:3s;
-}
-
-.frase3{
-    animation-name: frase2;
-    animation-duration:3s;
-    animation-iteration-count: infinite;
 }
 
 .logo{
     display: flex;
     position: sticky;
     width: 100%;
-    max-width: 500px;
-    height: 30%;
-    top: 50px;
     margin-bottom: 65px;
     flex-direction: column;
     align-items: center;
@@ -108,7 +97,7 @@
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
-    margin: 20px; 
+    margin-bottom: 20px; 
     border-bottom: 2px solid rgb(234, 190, 63);
 }
 
@@ -181,7 +170,6 @@ label{
 }
 
 .formulario{
-    height: 220px;
     overflow-y: scroll;
     opacity: 0;
     animation-name: form;
@@ -271,140 +259,120 @@ input[type=number]::-webkit-outer-spin-button {
         background: linear-gradient(120deg, #fff 0%, #454142 5%, #fff 10%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     10%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 5%, #454142 10%, #fff 15%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     15%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 10%, #454142 15%, #fff 20%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     20%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 15%, #454142 20%, #fff 25%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     25%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 20%, #454142 25%, #fff 30%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     30%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 25%, #454142 30%, #fff 35%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     35%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 30%, #454142 35%, #fff 40%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     40%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 35%, #454142 40%, #fff 45%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     45%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 40%, #454142 45%, #fff 50%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     50%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 45%, #454142 50%, #fff 55%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     55%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 50%, #454142 55%, #fff 60%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     60%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 55%, #454142 60%, #fff 65%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     65%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 60%, #454142 65%, #fff 70%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     70%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 65%, #454142 70%, #fff 75%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     75%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 70%, #454142 75%, #fff 80%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     80%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 75%, #454142 80%, #fff 85%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     85%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 80%, #454142 85%, #fff 90%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     90%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 85%, #454142 90%, #fff 95%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     95%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 90%, #454142 95%, #fff 100%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
     100%{
         background: #fff ;
         background: linear-gradient(120deg, #fff 95%, #454142 100%, #fff 100%);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: medium;
     }
 }
 
