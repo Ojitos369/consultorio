@@ -7,9 +7,9 @@
 }
 
 .siguiente{
+    position: relative;
     width: 50px;
-    align-self: flex-end;
-    margin-right: 30%;
+    left: 25%;
 }
 
 .iniciales{

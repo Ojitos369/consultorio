@@ -1,15 +1,29 @@
 <?php
+header("Content-Type: text/html; charset=iso-8859-1");
 require('./php/conexion.php');
 $conexion = conectar('./json/datos.json');
 $query = "select * from preguntas where preguntas.id_seccion in (select id from seccion where seccion.id_encuesta=1)";
 $preguntas = $conexion->query($query);
+// array "acentuadas" in php with vocals accented
+$simbolos = array("á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "¿");
+// array "simbolos_codif" with simbols in $simbolos to html codified start with &
+$simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute;", "&Aacute;", "&Eacute;", "&Iacute;", "&Oacute;", "&Uacute;", "&iquest;");
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset='utf-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <script>
+        let checar = true;
+        let inicio = '1';
+        let encuesta = 'inicial';
+        let fin = '<?= $preguntas->num_rows ?>';
+        let flecha = true;
+    </script>
+    <script src="./js/encuesta.js"></script>
+    <script src="./js/encuesta_inicial.js"></script>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/encuesta.css">
     <link rel="stylesheet" href="./css/encuesta_inicial.css">
@@ -18,14 +32,6 @@ $preguntas = $conexion->query($query);
     <link rel="icon" href="./imagenes/logo-simple.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/encuesta.js"></script>
-    <script src="./js/encuesta_inicial.js"></script>
-    <script>
-        let checar = true;
-        let inicio = '1';
-        let encuesta = 'inicial';
-        let fin = '<?= $preguntas->num_rows ?>';
-    </script>
 </head>
 
 <body onload="animaciones(); tamanios();">
@@ -42,14 +48,14 @@ $preguntas = $conexion->query($query);
                     if($pregunta["tipo"] == 'date'){
             ?>
                     <label for="pregunta-<?= $pregunta["id"] ?>" id="cont_<?= $pregunta["id"] ?>" class="pregunta <?= $pregunta["clase"] ?>">
-                        <?= $pregunta["pregunta"] ?> <br>
+                        <?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?> <br>
                         <input id="pregunta-<?= $pregunta["id"] ?>" class="input_<?= $pregunta["id"] ?> input input-fecha"  name="input_<?= $pregunta["id"] ?>" type="<?= $pregunta["tipo"] ?>" required="">
                     </label>
                 <?php
                     }else if($pregunta["tipo"] == 'checkbox' || $pregunta["tipo"] == 'radio'){
                 ?>
                     <div id="cont_<?= $pregunta["id"] ?>" class="eleccion pregunta <?= $pregunta["clase"] ?>">
-                    <?= $pregunta["pregunta"] ?>
+                    <?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>
                     <br>
                     <br>
                     <?php 
@@ -57,8 +63,8 @@ $preguntas = $conexion->query($query);
                             if($respuesta["id_pregunta"] == $pregunta["id"]){
                     ?>
                                 <label for="respuesta<?= $respuesta["id"] ?>" class="cont_eleccion">
-                                    <input class="input_<?= $pregunta["id"] ?> input input-eleccion" id="respuesta<?= $respuesta["id"] ?>" type="<?= $pregunta["tipo"] ?>" value="<?= $respuesta["respuesta"] ?>" name="input_<?= $pregunta["id"] ?>" required="">
-                                    <span><?= $respuesta["respuesta"] ?></span>
+                                    <input class="input_<?= $pregunta["id"] ?> input input-eleccion" id="respuesta<?= $respuesta["id"] ?>" type="<?= $pregunta["tipo"] ?>" value="<?= str_replace($simbolos, $simbolos_codif, $respuesta["respuesta"]) ?>" name="input_<?= $pregunta["id"] ?>" required="">
+                                    <span><?= str_replace($simbolos, $simbolos_codif, $respuesta["respuesta"]) ?></span>
                                 </label>
                                 <br>
                     <?php
@@ -69,18 +75,16 @@ $preguntas = $conexion->query($query);
                 <?php
                     }else if($pregunta["tipo"] == 'textarea'){
                 ?>
-                    <textarea id="cont_<?= $pregunta["id"] ?>" class="input_<?= $pregunta["id"] ?> pregunta input input-textarea <?= $pregunta["clase"] ?>" name="input_<?= $pregunta["id"] ?>" placeholder="<?= $pregunta["pregunta"] ?>" type="<?= $pregunta["tipo"] ?>" required=""></textarea>
+                    <textarea id="cont_<?= $pregunta["id"] ?>" class="input_<?= $pregunta["id"] ?> pregunta input input-textarea <?= $pregunta["clase"] ?>" name="input_<?= $pregunta["id"] ?>" placeholder="<?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>" type="<?= $pregunta["tipo"] ?>" required=""></textarea>
                     
                 <?php
                     }else{
                 ?>
-                    <input id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-texto <?= $pregunta["clase"] ?>" name="input_<?= $pregunta["id"] ?>" placeholder="<?= $pregunta["pregunta"] ?>" type="<?= $pregunta["tipo"] ?>" required=""></input>
+                    <input id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-texto <?= $pregunta["clase"] ?>" name="input_<?= $pregunta["id"] ?>" placeholder="<?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>" type="<?= $pregunta["tipo"] ?>" required=""></input>
                 <?php
                     }
                 ?>
-                <div class="siguiente <?= $pregunta["clase"] ?>" id="siguiente_<?= $pregunta["id"] ?>" onclick="preguntas('<?= $pregunta["id"] ?>');">
-                    <img src="./imagenes/siguiente.png" alt="">
-                </div>
+                <img src="./imagenes/siguiente.png" alt="" class="siguiente <?= $pregunta["clase"] ?>" id="siguiente_<?= $pregunta["id"] ?>" onclick="preguntas('<?= $pregunta["id"] ?>');">
             <?php
                 endwhile
             ?>
@@ -93,6 +97,7 @@ $preguntas = $conexion->query($query);
             </div>
         </form>
     </div>
+    <script>animaciones(); tamanios();</script>
 </body>
 </html>
 <?php

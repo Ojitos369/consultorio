@@ -1,14 +1,19 @@
 <?php
+header("Content-Type: text/html; charset=iso-8859-1");
 require('./php/conexion.php');
 $conexion = conectar('./json/datos.json');
 $query = "select * from preguntas where preguntas.id_seccion in (select id from seccion where seccion.id_encuesta=2)";
 $preguntas = $conexion->query($query);
+// array "acentuadas" in php with vocals accented
+$simbolos = array("á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "¿");
+// array "simbolos_codif" with simbols in $simbolos to html codified start with &
+$simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute;", "&Aacute;", "&Eacute;", "&Iacute;", "&Oacute;", "&Uacute;", "&iquest;");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/encuesta.css">
     <link rel="stylesheet" href="./css/fondo.css">
@@ -25,6 +30,7 @@ $preguntas = $conexion->query($query);
         let inicio = '16';
         let encuesta = 'final';
         let fin = '<?= $preguntas->num_rows + 15 ?>';
+        let flecha = false;
     </script>
 </head>
 
@@ -34,7 +40,7 @@ $preguntas = $conexion->query($query);
         <div id="logo" class="logo">
             <?php require('logo.php'); ?>
         </div>
-        <form action="r_fin.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
+        <form accept-charset="utf-8" action="r_fin.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
             <?php 
                 while($pregunta = $preguntas->fetch_assoc()):
                     $query = "select * from respuestas";
@@ -42,7 +48,7 @@ $preguntas = $conexion->query($query);
             ?>
                 <?php if($pregunta["tipo"] == 'checkbox' || $pregunta["tipo"] == 'radio'){ ?>
                     <div id="cont_<?= $pregunta["id"] ?>" class="caritas pregunta <?= $pregunta["clase"] ?>">
-                    <?= $pregunta["pregunta"] ?>
+                    <?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>
                     <br>
                     <div class="eleccion">
                     <?php
@@ -57,12 +63,15 @@ $preguntas = $conexion->query($query);
                     </div>
                     </div>
                 <?php }else if($pregunta["tipo"] == 'textarea'){?>
-                    <textarea id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-textarea <?= $pregunta["clase"] ?>" name="<?= $pregunta["id"] ?>" placeholder="<?= $pregunta["pregunta"] ?>" type="<?= $pregunta["tipo"] ?>" required=""></textarea>
+                    <textarea id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-textarea <?= $pregunta["clase"] ?>" name="<?= $pregunta["id"] ?>" placeholder="<?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>" type="<?= $pregunta["tipo"] ?>" required=""></textarea>
                     <br>
                 <?php }else{ ?>
-                    <input id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-texto <?= $pregunta["clase"] ?>" name="<?= $pregunta["id"] ?>" placeholder="<?= $pregunta["pregunta"] ?>" type="<?= $pregunta["tipo"] ?>" required=""></input><br>
+                    <input id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-texto <?= $pregunta["clase"] ?>" name="<?= $pregunta["id"] ?>" placeholder="<?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>" type="<?= $pregunta["tipo"] ?>" required=""></input><br>
                 <?php } ?>
                 <br>
+                <script>
+                    console.log("<?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>");
+                </script>
             <?php
                 endwhile
             ?>

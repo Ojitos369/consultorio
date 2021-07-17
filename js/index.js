@@ -14,6 +14,8 @@ function protector(){
     imagen.style.top = 0;
     imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
     protector.style.paddingBottom = `${porcentaje_abajo / 5}px`;
+    let ancho_img = imagen.offsetWidth;
+    frase.style.width = `${ancho_img * 1.2}px`
     console.clear();
     console.log(`alto: ${alto}`);
     console.log(`ancho: ${ancho}`);
