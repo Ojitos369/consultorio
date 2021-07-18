@@ -1,6 +1,7 @@
 *{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    text-align: center !important;
 }
 
 .protector{
@@ -25,6 +26,7 @@
 
 
 .frase{
+    text-align: center;
     animation-name: frase;
     animation-duration:3s;
     animation-iteration-count: infinite;
@@ -78,12 +80,10 @@
 
 .inicial{
     justify-self: flex-start;
-    margin-left: 80px;
 }
 
 .final{
     justify-self: flex-end;
-    margin-left: 100px;
 }
 
 @keyframes frase{

@@ -3,8 +3,9 @@
 }: */
 
 function animaciones(){
+    let fondo = document.getElementById("img_fondo");
+    let alto = fondo.offsetHeight/4;
     let imagen = document.getElementById('img-logo');
-    let alto = screen.height/4;
     let largo = alto * 3;
     imagen.style.height = (`${alto}px`);
     imagen.style.width = (`${largo}px`);
@@ -27,8 +28,9 @@ function animaciones(){
 
 // function for logo style
 function logo(){
-    let alto = screen.height;
-    let ancho = screen.width;
+    let fondo = document.getElementById("img_fondo");
+    let alto = fondo.offsetHeight;
+    let ancho = fondo.offsetWidth;
     let porcentaje_arriba = alto * 0.1;
     let porcentaje_abajo = alto * 0.15;
     let imagen = document.getElementById('img-logo');
@@ -38,7 +40,7 @@ function logo(){
     let total =  alto * 0.65;
 
     // estilo imagen
-    imagen.style.height = `${total * 0.25}px`
+    imagen.style.height = `${total * 0.3}px`
     imagen.style.top = 0;
     imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
     // widh auto to iamgen
@@ -47,7 +49,7 @@ function logo(){
     // height to container
     container.style.position = 'fixed';
     container.style.height = `${total}px`;
-    container.style.top = `${alto * 0.09}px`;
+    container.style.top = `${alto * 0.15}px`;
 
     // dinamic margin bottmo to logo
     logo.style.paddingBottom = `${total * 0.04}px`;

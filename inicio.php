@@ -35,7 +35,7 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
 </head>
 
 <body onload="animaciones(); tamanios();">
-    <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo">
+    <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo" id="img_fondo">
     <div class="main-container" id="main-container">
         <div id="logo" class="logo">
             <?php require('logo.php'); ?>

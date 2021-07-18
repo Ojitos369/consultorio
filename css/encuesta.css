@@ -1,5 +1,10 @@
 *{
     font-family: 'Montserrat', sans-serif;
+    text-align: center !important;
+}
+
+.img-fondo{
+    position: fixed;
 }
 
 .main-container{

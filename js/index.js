@@ -1,7 +1,8 @@
 //code in javaScript
 function protector(){
-    let alto = screen.height;
-    let ancho = screen.width;
+    let fondo = document.getElementById("img_fondo");
+    let alto = fondo.offsetHeight;
+    let ancho = fondo.offsetWidth;
     let protector = document.getElementById("protector");
     let porcentaje_arriba = alto * 0.1;
     let porcentaje_abajo = alto * 0.1;
@@ -25,9 +26,9 @@ function protector(){
 }
 
 function principal(){
-    // get width and height of the screen
-    let alto = screen.height;
-    let ancho = screen.width;
+    let fondo = document.getElementById("img_fondo");
+    let alto = fondo.offsetHeight;
+    let ancho = fondo.offsetWidth;
     // procentaje of the top and bottom
     let porcentaje_arriba = alto * 0.1;
     let porcentaje_abajo = alto * 0.1;
@@ -52,26 +53,33 @@ function principal(){
     encuestas.style.marginTop = `${porcentaje_abajo / 2}px`;
     // get encuestas from the DOM by class "encuesta"
     let encuestas_class = document.getElementsByClassName("encuesta");
+    let ancho_container = container.offsetWidth;
     // set encuesta height and width
     for (let i = 0; i < encuestas_class.length; i++) {
         let encuesta = encuestas_class[i];
         let altura_encuesta = altura_container * 0.14;
-        encuesta.style.height = `${altura_encuesta}px`
         encuesta.style.width = `${ancho * 0.2}px`;
+        
         if(ancho >= 1120){
             encuesta.style.fontSize = "30px"
             frase.style.fontSize = "30px"
-            frase2.style.fontSize = "40px"
+            frase2.style.fontSize = "35px"
         }else if (ancho < 1120 && ancho >= 800){
             encuesta.style.fontSize = "25px"
             frase.style.fontSize = "25px"
-            frase2.style.fontSize = "37px"
-        }else{
+            frase2.style.fontSize = "30px"
+        }else if (ancho < 8 && ancho >= 600){
             encuesta.style.fontSize = "20px"
             frase.style.fontSize = "20px"
             frase2.style.fontSize = "25px"
+        }else{
+        encuesta.style.fontSize = "15px"
+        frase.style.fontSize = "15px"
+        frase2.style.fontSize = "20px"
         }
-        encuesta.style.paddingTop = `${altura_encuesta * 0.2}px`;
+        encuesta.style.paddingTop = `${altura_encuesta * 0.25}px`;
+        encuesta.style.paddingBottom = `${altura_encuesta * 0.3}px`;
+        encuesta.style.margin = `0 ${ancho_container * 0.03}px`;
     }
     // set border to encuestas
     //encuestas.style.border = `1px solid #c00`;
