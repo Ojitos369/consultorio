@@ -33,27 +33,22 @@
 }
 
 .frase{
+    display: none;
     position: relative;
     text-align: center;
     width: 100% !important; 
     right: -1000px;
     color: #454142;
-    animation-name: frase, frase2;
-    animation-duration:3s;
+    /* animation-name: frase, frase2;
+    animation-duration:3s; */
 }
 
 .logo{
     display: flex;
-    position: sticky;
+    position: relative;
     width: 100%;
     flex-direction: column;
     align-items: center;
-}
-
-.frase3{
-    animation-name: frase2;
-    animation-duration:3s;
-    animation-iteration-count: infinite;
 }
 
 .container{
@@ -416,4 +411,8 @@ input[type=number]::-webkit-outer-spin-button {
 .input-textarea{
     overflow-y: visible;
     height: 150px !important;
+}
+
+.frase, .frase3, .frase2{
+    display: none !important;
 }

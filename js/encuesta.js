@@ -37,10 +37,10 @@ function logo(){
     let container =  document.getElementById('main-container');
     let logo =  document.getElementById('logo');
     let frase = document.getElementById('frase');
-    let total =  alto * 0.65;
+    let total =  alto * 0.70;
 
     // estilo imagen
-    imagen.style.height = `${total * 0.3}px`
+    imagen.style.height = `${total * 0.15}px`
     imagen.style.top = 0;
     imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
     // widh auto to iamgen
@@ -51,8 +51,8 @@ function logo(){
     container.style.height = `${total}px`;
     container.style.top = `${alto * 0.15}px`;
 
-    // dinamic margin bottmo to logo
-    logo.style.paddingBottom = `${total * 0.04}px`;
+    // set logo position to botton of container
+    logo.style.top = `${total * 0.15}px`;
     
     if(ancho >= 1120){
         frase.style.fontSize = "20px";
@@ -70,23 +70,18 @@ function formulario(){
     let formulario =  document.getElementById('formulario');
     let container =  document.getElementById('main-container');
     let comentario = document.getElementsByClassName('opinion')[0];
-    let qr = document.getElementById('img-qr');
 
     // get height of container
     let alto = container.offsetHeight;
 
-    let alto_form = alto * 0.6
+    let alto_form = alto * 0.66;
 
     //border to formulario
     formulario.style.height = `${alto_form}px`;
+    formulario.style.paddingTop = `${alto_form * 0.15}px`;
 
     // set padding to comentario
-    comentario.style.paddingBottom = `${alto * 0.1}px`;    
-
-    // height to qr 80% alto_form
-    qr.style.height = `${alto_form * 0.8}px`;
-    // qr widht auto
-    qr.style.width = "auto";
+    comentario.style.paddingBottom = `${alto * 0.1}px`;
     
     //formulario.style.border = "#0f0 1px solid";
     //comentario.style.border = "#f00 1px solid";

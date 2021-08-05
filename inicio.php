@@ -37,9 +37,6 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
 <body onload="animaciones(); tamanios();">
     <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo" id="img_fondo">
     <div class="main-container" id="main-container">
-        <div id="logo" class="logo">
-            <?php require('logo.php'); ?>
-        </div>
         <form action="r_inicio.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
             <?php
                 while($pregunta = $preguntas->fetch_assoc()):
@@ -62,7 +59,7 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
                         while($respuesta = $respuestas->fetch_assoc()):
                             if($respuesta["id_pregunta"] == $pregunta["id"]){
                     ?>
-                                <label for="respuesta<?= $respuesta["id"] ?>" class="cont_eleccion">
+                                <label for="respuesta<?= $respuesta["id"] ?>" id="labelR<?= $respuesta["id"] ?>" class="cont_eleccion" onclick="leerOpciones(<?= $respuesta['id'] ?>);">
                                     <input class="input_<?= $pregunta["id"] ?> input input-eleccion" id="respuesta<?= $respuesta["id"] ?>" type="<?= $pregunta["tipo"] ?>" value="<?= str_replace($simbolos, $simbolos_codif, $respuesta["respuesta"]) ?>" name="input_<?= $pregunta["id"] ?>" required="">
                                     <span><?= str_replace($simbolos, $simbolos_codif, $respuesta["respuesta"]) ?></span>
                                 </label>
@@ -84,18 +81,23 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
                 <?php
                     }
                 ?>
+                <?php 
+                if($pregunta["clase"] == "pregunta-13 especial"):?>
+                    <label for="cuantos" id="cuantos_cont" class="pregunta">
+                        <br>
+                        <input type="text" id="cuantos" class="input input-fecha <?= $pregunta["clase"] ?>" name="input_<?= $pregunta["id"] ?>" placeholder="Cuantas: "></input>
+                    </label>
+                <?php endif ?>
                 <img src="./imagenes/siguiente.png" alt="" class="siguiente <?= $pregunta["clase"] ?>" id="siguiente_<?= $pregunta["id"] ?>" onclick="preguntas('<?= $pregunta["id"] ?>');">
             <?php
                 endwhile
             ?>
             <input name="id_encuesta" type="hidden" value="1" required="">
             <input id="enviar" class="pregunta input enviar" type="submit" title="enviar">
-            <div class="container container-qr" id="footer">
-                <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
-                <br>
-                <img src="./imagenes/qr.png" alt="" class="instagram qr" id="img-qr">
-            </div>
         </form>
+        <div id="logo" class="logo">
+            <?php require('logo.php'); ?>
+        </div>
     </div>
     <script>animaciones(); tamanios();</script>
 </body>

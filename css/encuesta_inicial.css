@@ -34,6 +34,10 @@
     animation-iteration-count: infinite;
 }
 
+#cuantos_cont{
+    display: none;
+}
+
 @keyframes animacion_arriba{
     from{
         opacity: 1;

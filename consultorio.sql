@@ -1,6 +1,6 @@
---DROP DATABASE IF EXISTS `consultorio`;
---CREATE DATABASE `consultorio`;
---USE `consultorio`;
+DROP DATABASE IF EXISTS `consultorio`;
+CREATE DATABASE `consultorio`;
+USE `consultorio`;
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
@@ -78,9 +78,9 @@ INSERT INTO `seccion` (id_encuesta, nombre, descripcion, clase) VALUES (1,'perso
 UNLOCK TABLES;
 
 LOCK TABLES `preguntas` WRITE;
-INSERT INTO `preguntas` (id_seccion, pregunta, tipo, clase) VALUES (1,'Nombre y Apellido','text','iniciales pregunta-1'),(1,'Fecha de Nacimiento','date','pregunta-2'),(1,'Estado Civil','radio','pregunta-3'),(2,'País','text','direccion pregunta-4'),(2,'Ciudad','text','direccion pregunta-5'),(2,'Código Postal','number','direccion pregunta-6'),(2,'Calle','text','direccion pregunta-7'),(2,'Número Interior y/o Exterior','text','direccion pregunta-8'),(3,'Teléfono','number','pregunta-10'),(3,'Correo Electrónico','email','pregunta-11'),(4,'Tipo de Cirugía Realizada','text','pregunta-12'),(4,'¿Cuántas Cirugias Previas?','number','pregunta-13'),(4,'Fecha de Cirugía','date','pregunta-14'),(4,'Protocolo Postquirúrgico','radio','pregunta-15'),(5,'¿Cómo Te Enteraste de Plastic Surgery Recovery?','textarea','opinion pregunta-16'), (6,'Nombre','text','iniciales pregunta-17'), (7,'¿Cómo Calificarías el Servicio Brindado por la Dermotherapist Lorena Gómez?','radio','iniciales pregunta-18'),(7,'¿Cómo Calificarías el Servicio Dentro de Plastic Surgery Recovery?','radio','pregunta-19'),(7,'¿Qué Te Gustaría que Implementemos o Mejoremos?','textarea','opinion pregunta-20');
+INSERT INTO `preguntas` (id_seccion, pregunta, tipo, clase) VALUES (1,'Nombre y Apellido','text','iniciales pregunta-1'),(1,'Fecha de Nacimiento','date','pregunta-2'),(1,'Estado Civil','radio','pregunta-3'),(2,'País','text','direccion pregunta-4'),(2,'Ciudad','text','direccion pregunta-5'),(2,'Código Postal','text','direccion pregunta-6'),(2,'Calle','text','direccion pregunta-7'),(2,'Número Interior y/o Exterior','text','direccion pregunta-8'),(3,'Teléfono','text','pregunta-9'),(3,'Correo Electrónico','text','pregunta-10'),(4,'Tipo de Cirugía Realizada','text','pregunta-11'),(4,'Fecha de Cirugía','date','pregunta-12'),(4,'¿Se Ha Realizado Cirugías Previas?','radio','pregunta-13 especial'),(4,'Protocolo Postquirúrgico','radio','pregunta-14'),(5,'¿Cómo Te Enteraste de Plastic Surgery Recovery?','textarea','opinion pregunta-15'), (6,'Nombre y Apellido','text','iniciales pregunta-16'), (7,'¿Cómo Calificarías el Servicio Brindado por la Dermotherapist Lorena Gómez?','radio','pregunta-17'),(7,'¿Cómo Calificarías el Servicio Dentro de Plastic Surgery Recovery?','radio','pregunta-18'),(7,'¿Qué Te Gustaría que Implementemos o Mejoremos?','textarea','opinion pregunta-19');
 UNLOCK TABLES;
 
 LOCK TABLES `respuestas` WRITE;
-INSERT INTO `respuestas` (id_pregunta, respuesta, clase) VALUES (3,'Casada','respuesta-1'),(3,'Soltera','respuesta-2'),(14,'Fast Recovery','respuesta-3'),(14,'Full Recovery','respuesta-4'),(14,'Experiencia St Regis','respuesta-5'), (17,'5','5'), (17,'4','4'), (17,'3','3'), (17,'2','2'), (17,'1','1'), (18,'5','5'), (18,'4','4'), (18,'3','3'), (18,'2','2'), (18,'1','1');
+INSERT INTO `respuestas` (id_pregunta, respuesta, clase) VALUES (3,'Casada (o)','respuesta-1'),(3,'Soltera (o)','respuesta-2'),(13,'Si','respuesta-3'),(13,'No','respuesta-4'),(14,'Fast Recovery','respuesta-5'),(14,'Full Recovery','respuesta-6'),(14,'Experiencia St Regis','respuesta-7'), (17,'5','5'), (17,'4','4'), (17,'3','3'), (17,'2','2'), (17,'1','1'), (18,'5','5'), (18,'4','4'), (18,'3','3'), (18,'2','2'), (18,'1','1');
 UNLOCK TABLES;

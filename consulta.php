@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: text/html; charset=iso-8859-1");
 require('./php/conexion.php');
 $conexion = conectar('./json/datos.json');
 ?>
@@ -6,7 +7,7 @@ $conexion = conectar('./json/datos.json');
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/consulta.css">
@@ -42,12 +43,10 @@ $conexion = conectar('./json/datos.json');
     <title>consulta</title>
 </head>
 <body onload="tablaCompleta(paso);">
-    <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo">
-    <div class="">
+    <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo" id="img-fondo">
+    <div class="container" id="container">
         <input placeholder="Buscar" class="buscar d-inline w-75 form-control border border-dark rounded-pill" type="text" id="buscar-pal" onkeyup="autocompletado(paso);">
         <button class="btn btn-secondary" onclick="bajarCsv('table','datos');">Descargar datos</button>
-    </div>
-    <div>
         <table id="table" class="table">
         </table>
     </div>

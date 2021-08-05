@@ -5,11 +5,10 @@ function preguntas(numero){
     let siguiente_act = document.getElementById(sig);
     let elemento = document.getElementById(id);
     let valor = document.getElementsByName(input)[0];
-    console.log(valor);
+    //console.log(valor);
     valor = valor.value;
     let enviar = document.getElementById('enviar');
-    let qr = document.getElementById('footer');
-    console.log(`pregunta: ${numero} - valor: ${valor}`)
+    //console.log(`pregunta: ${numero} - valor: ${valor}`)
     if(valor == '' || valor == undefined){
         alert('El campo no puede ir vacio')
     }else{
@@ -26,7 +25,6 @@ function preguntas(numero){
             if(parseInt(numero)+1 == fin){
                 final = true
                 enviar.classList.add('animacion_abajo');
-                qr.classList.add('animacion_abajo');
             }
             elemento.classList.add('animacion_arriba');
             //siguiente_act.classList.add('animacion_arriba');
@@ -44,9 +42,7 @@ function preguntas(numero){
                 setTimeout(() => {
                     if(final){
                         enviar.style.display = 'block';
-                        qr.style.display = 'flex';
                         enviar.classList.remove('animacion_abajo');
-                        qr.classList.remove('animacion_abajo');
                     }
                     siguiente.classList.remove('animacion_abajo');
                     //siguiente_sig.classList.remove('animacion_abajo');
@@ -57,5 +53,25 @@ function preguntas(numero){
     let opiniones = document.getElementsByClassName("opinion")
     for(i=0; i<opiniones.length; i++){
         opiniones[i].style.height = "150px"
+    }
+    let ele = document.getElementById("cuantos");
+    let cont = document.getElementById("cuantos_cont");
+    ele.style.display = 'none';
+    cont.style.display = 'none';
+}
+
+function leerOpciones(id){
+    let ele = document.getElementById("cuantos");
+    let cont = document.getElementById("cuantos_cont");
+    let text = document.getElementById("cuantos_text");
+    if(id == '3'){
+        ele.value = '';
+        ele.style.display = 'block';
+        cont.style.display = 'block';
+        console.log("MOSTRADO");
+    }else{
+        ele.value = 'No';
+        ele.style.display = 'none';
+        cont.style.display = 'none';
     }
 }

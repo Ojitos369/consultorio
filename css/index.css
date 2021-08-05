@@ -22,14 +22,15 @@
 .protector > .frase{
     width: 100%;
     text-align: center;
+    display: none;
 }
 
 
 .frase{
     text-align: center;
-    animation-name: frase;
+    /* animation-name: frase;
     animation-duration:3s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
 }
 
 .container{
@@ -61,6 +62,7 @@
 }
 
 .encuestas{
+    position: relative;
     display: flex;
     flex-direction: row;
 }

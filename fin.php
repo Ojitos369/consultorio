@@ -18,12 +18,14 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
     <link rel="stylesheet" href="./css/encuesta.css">
     <link rel="stylesheet" href="./css/fondo.css">
     <link rel="stylesheet" href="./css/encuesta_fin.css">
+    <link rel="stylesheet" href="./css/encuesta_inicial.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="./imagenes/logo-simple.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/encuesta_fin.js"></script>
     <script src="./js/encuesta.js"></script>
+    <script src="./js/encuesta_inicial.js"></script>
     <script>
         console.log('<?= $preguntas->num_rows + 15 ?>');
         let checar = false;
@@ -37,9 +39,6 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
 <body onload="animaciones(); tamanios();">
     <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo" id="img_fondo">
     <div class="main-container" id="main-container">
-        <div id="logo" class="logo">
-            <?php require('logo.php'); ?>
-        </div>
         <form accept-charset="utf-8" action="r_fin.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
             <?php 
                 while($pregunta = $preguntas->fetch_assoc()):
@@ -67,6 +66,7 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
                     <br>
                 <?php }else{ ?>
                     <input id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-texto <?= $pregunta["clase"] ?>" name="<?= $pregunta["id"] ?>" placeholder="<?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>" type="<?= $pregunta["tipo"] ?>" required=""></input><br>
+                    <img src="./imagenes/siguiente.png" alt="" class="siguiente <?= $pregunta["clase"] ?>" id="siguiente" onclick="cambio('<?= $pregunta["id"] ?>')">
                 <?php } ?>
                 <br>
                 <script>
@@ -77,14 +77,11 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
             ?>
             <input name="id_encuesta" type="hidden" value="2">
             <input id="enviar" class="pregunta input enviar" type="submit" title="enviar">
-            <div class="container container-qr" id="footer">
-            <p class="insta_text">"Te invito a seguirme en Instagram, donde encontraras beneficios e información relevante cada semana"</p>
-            <br>
-            <img src="./imagenes/qr.png" alt="" class="instagram qr" id="img-qr">
-        </div>
         </form>
-    </div>
-    
+        <div id="logo" class="logo">
+            <?php require('logo.php'); ?>
+        </div>
+    </div>    
 </body>
 </html>
 

@@ -17,5 +17,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conexion->close();
-header('location: index.php');
+header('location: redireccion.php');
 ?>

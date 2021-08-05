@@ -20,12 +20,18 @@
         <?php require('logo.php'); ?>
     </div>
     <div id="container" class="container">
-        <div class="logo">
+        <!-- <div class="logo">
             <?php require('logo.php'); ?>
-        </div>
+        </div> -->
         <div class="encuestas" id="encuestas" >
-            <a href="./inicio.php" id="encuesta_inicial" class="encuesta inicial">Encuesta Inicial</a><br>
-            <a href="./fin.php" id="encuesta_final" class="encuesta final">Encuesta Final</a>
+            <a href="./inicio.php" id="encuesta_inicial" class="encuesta inicial">
+                <p>Encuesta</p>
+                <p>Inicial</p>
+            </a><br>
+            <a href="./fin.php" id="encuesta_final" class="encuesta final">
+                <p>Encuesta</p>
+                <p>Final</p>
+            </a>
         </div>
     </div>
 </body>
