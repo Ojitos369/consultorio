@@ -21,6 +21,7 @@
 }
 .protector > .frase{
     width: 100%;
+    color: rgb(234, 190, 63);
     text-align: center;
     display: none;
 }

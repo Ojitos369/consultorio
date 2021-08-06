@@ -2,6 +2,10 @@
 header("Content-Type: text/html; charset=iso-8859-1");
 require('./php/conexion.php');
 $conexion = conectar('./json/datos.json');
+// array "acentuadas" in php with vocals accented
+$simbolos = array("á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "¿");
+// array "simbolos_codif" with simbols in $simbolos to html codified start with &
+$simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute;", "&Aacute;", "&Eacute;", "&Iacute;", "&Oacute;", "&Uacute;", "&iquest;");
 ?>
 
 <!DOCTYPE html>
@@ -25,25 +29,25 @@ $conexion = conectar('./json/datos.json');
             while($dato = $consulta->fetch_assoc()):
         ?>
             dato = {
-                    "nombre": '<?= $dato["nombre"] ?>',
-                    "encuesta": '<?= $dato["encuesta"] ?>',
-                    "pregunta": '<?= $dato["pregunta"] ?>',
-                    "respuesta": '<?= $dato["respuesta"] ?>'
+                    "nombre": '<?= str_replace($simbolos, $simbolos_codif, $dato["nombre"]) ?>',
+                    "encuesta": '<?= str_replace($simbolos, $simbolos_codif, $dato["encuesta"]) ?>',
+                    "pregunta": '<?= str_replace($simbolos, $simbolos_codif, $dato["pregunta"]) ?>',
+                    "respuesta": '<?= str_replace($simbolos, $simbolos_codif, $dato["respuesta"]) ?>'
                 }
-            console.log(dato)
+            //console.log(dato)
             datos.push(dato)
         <?php
             endwhile
         ?>
-        console.log(datos);
+        //console.log(datos);
         let paso = JSON.stringify(datos);
-        console.log(paso);
+        //console.log(paso);
     </script>
     <script src="./js/consulta.js"></script>
     <title>consulta</title>
 </head>
 <body onload="tablaCompleta(paso);">
-    <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo" id="img-fondo">
+    <!-- <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo" id="img-fondo"> -->
     <div class="container" id="container">
         <input placeholder="Buscar" class="buscar d-inline w-75 form-control border border-dark rounded-pill" type="text" id="buscar-pal" onkeyup="autocompletado(paso);">
         <button class="btn btn-secondary" onclick="bajarCsv('table','datos');">Descargar datos</button>

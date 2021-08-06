@@ -20,9 +20,6 @@
         <?php require('logo.php'); ?>
     </div>
     <div id="container" class="container">
-        <!-- <div class="logo">
-            <?php require('logo.php'); ?>
-        </div> -->
         <div class="encuestas" id="encuestas" >
             <a href="./inicio.php" id="encuesta_inicial" class="encuesta inicial">
                 <p>Encuesta</p>

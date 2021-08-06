@@ -8,7 +8,7 @@ function protector(){
     let porcentaje_abajo = alto * 0.1;
     let altura_protector = alto - porcentaje_abajo - porcentaje_arriba;
     let imagen = document.getElementsByClassName("img-logo")[0];
-    //let frase = document.getElementsByClassName("frase")[0];
+    let frase = document.getElementById("frase");
     protector.style.height = `${altura_protector}px`
     protector.style.top = `${porcentaje_arriba / 6}px`;
     imagen.style.height = `${altura_protector * 0.75}px`
@@ -33,6 +33,8 @@ function principal(){
     let porcentaje_arriba = alto * 0.1;
     let porcentaje_abajo = alto * 0.1;
     let altura_container = alto - porcentaje_abajo - porcentaje_arriba;
+    let frase = document.getElementById("frase");
+    //let frase = document.getElementsByClassName("frase")[0];
     // get img-logo from the DOM
     /* let imagen = document.getElementsByClassName("img-logo")[1];
     let frase = document.getElementsByClassName("frase")[1];
@@ -62,19 +64,19 @@ function principal(){
         
         if(ancho >= 1120){
             encuesta.style.fontSize = "30px"
-            frase.style.fontSize = "30px"
+            frase.style.fontSize = "80px"
             //frase2.style.fontSize = "35px"
         }else if (ancho < 1120 && ancho >= 800){
             encuesta.style.fontSize = "25px"
-            frase.style.fontSize = "25px"
+            frase.style.fontSize = "50px"
             //frase2.style.fontSize = "30px"
         }else if (ancho < 8 && ancho >= 600){
             encuesta.style.fontSize = "20px"
-            frase.style.fontSize = "20px"
+            frase.style.fontSize = "40px"
             //frase2.style.fontSize = "25px"
         }else{
         encuesta.style.fontSize = "15px"
-        frase.style.fontSize = "15px"
+        frase.style.fontSize = "30px"
         //frase2.style.fontSize = "20px"
         }
         encuesta.style.paddingTop = `${altura_encuesta * 0.25}px`;

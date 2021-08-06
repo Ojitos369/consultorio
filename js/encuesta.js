@@ -40,9 +40,9 @@ function logo(){
     let total =  alto * 0.70;
 
     // estilo imagen
-    imagen.style.height = `${total * 0.15}px`
+    imagen.style.height = `${total * 0.25}px`
     imagen.style.top = 0;
-    imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
+    //imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
     // widh auto to iamgen
     imagen.style.width = "auto";
 
@@ -52,7 +52,7 @@ function logo(){
     container.style.top = `${alto * 0.15}px`;
 
     // set logo position to botton of container
-    logo.style.top = `${total * 0.15}px`;
+    logo.style.top = `${total * 0.0}px`;
     
     if(ancho >= 1120){
         frase.style.fontSize = "20px";
@@ -70,6 +70,7 @@ function formulario(){
     let formulario =  document.getElementById('formulario');
     let container =  document.getElementById('main-container');
     let comentario = document.getElementsByClassName('opinion')[0];
+    let preguntas = document.getElementsByClassName('pregunta');
 
     // get height of container
     let alto = container.offsetHeight;
@@ -82,6 +83,11 @@ function formulario(){
 
     // set padding to comentario
     comentario.style.paddingBottom = `${alto * 0.1}px`;
+
+    for(i = 0; i < preguntas.length; i++){
+        preguntas[i].style.fontSize = `25px`;
+        preguntas[i].style.marginTop = `${alto * 0.1}px`;
+    }
     
     //formulario.style.border = "#0f0 1px solid";
     //comentario.style.border = "#f00 1px solid";

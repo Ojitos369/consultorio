@@ -1,3 +1,7 @@
+let simbolos = ["á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "¿"];
+let simbolos_codif = ["&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute;", "&Aacute;", "&Eacute;", "&Iacute;", "&Oacute;", "&Uacute;", "&iquest;"];
+//.replace(simbolos, simbolos_codif);
+
 function autocompletado(datos){
     let consulta = JSON.parse(datos);
     let n = consulta.length;
@@ -9,7 +13,7 @@ function autocompletado(datos){
 
     document.getElementById("table").innerHTML = '';
 
-    let pal = document.getElementById("buscar-pal").value;
+    let pal = document.getElementById("buscar-pal").value.replace(simbolos, simbolos_codif);
     
     let tam = pal.length;
     if(pal == ''){
@@ -18,11 +22,11 @@ function autocompletado(datos){
         crearTabla(tabla);
         let tbody = document.createElement("tbody");
         for(i in preguntas){
-            let nombre = preguntas[i].nombre;
-            let encuesta = preguntas[i].encuesta;
-            let pregunta = preguntas[i].pregunta;
-            let respuesta = preguntas[i].respuesta;
-            let str = [nombre.substring(0,tam), encuesta.substring(0,tam),pregunta.substring(0,tam), respuesta.substring(0,tam)];
+            let nombre = preguntas[i].nombre.replace(simbolos, simbolos_codif);
+            let encuesta = preguntas[i].encuesta.replace(simbolos, simbolos_codif);
+            let pregunta = preguntas[i].pregunta.replace(simbolos, simbolos_codif);
+            let respuesta = preguntas[i].respuesta.replace(simbolos, simbolos_codif);
+            let str = [nombre.substring(0,tam), encuesta.substring(0,tam), pregunta.substring(0,tam), respuesta.substring(0,tam)];
             if(pal.length <= nombre.length && pal.length != 0 && nombre.length != 0){
                 if((pal.toLowerCase() == str[0].toLowerCase()) || (pal.toLowerCase() == str[1].toLowerCase()) || (pal.toLowerCase() == str[2].toLowerCase()) || (pal.toLowerCase() == str[3].toLowerCase())){
                     let tr = document.createElement("tr");
@@ -46,7 +50,7 @@ function autocompletado(datos){
                     tr.className = "broder border-bottom border-dark"
                     tbody.appendChild(tr);
                 } else {
-                    console.log('no');
+                    //console.log('no');
                 }
             }
         tabla.appendChild(tbody);
@@ -84,10 +88,10 @@ function tablaCompleta(datos){
     tabla.appendChild(thead);
     let tbody = document.createElement("tbody");
     for(i in consulta){
-        let bnombre = consulta[i].nombre;
-        let bencuesta = consulta[i].encuesta;
-        let bpregunta = consulta[i].pregunta;
-        let brespuesta = consulta[i].respuesta;
+        let bnombre = consulta[i].nombre.replace(simbolos, simbolos_codif);
+        let bencuesta = consulta[i].encuesta.replace(simbolos, simbolos_codif);
+        let bpregunta = consulta[i].pregunta.replace(simbolos, simbolos_codif);
+        let brespuesta = consulta[i].respuesta.replace(simbolos, simbolos_codif);
         let btr = document.createElement("tr");
         let bthNombre = document.createElement("th");
         let bthEncuesta = document.createElement("th");
