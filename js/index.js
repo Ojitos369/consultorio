@@ -12,7 +12,7 @@ function protector(){
     protector.style.height = `${altura_protector}px`
     protector.style.top = `${porcentaje_arriba / 6}px`;
     imagen.style.height = `${altura_protector * 0.75}px`
-    imagen.style.top = 0;
+    imagen.style.marginTop = `${alto * 0.15}px`;
     imagen.style.marginBottom = `${porcentaje_abajo / 10}px`;
     protector.style.paddingBottom = `${porcentaje_abajo / 5}px`;
     let ancho_img = imagen.offsetWidth;

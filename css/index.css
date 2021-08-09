@@ -24,6 +24,11 @@
     color: rgb(234, 190, 63);
     text-align: center;
     display: none;
+    font-family: 'Christian Heedlay';
+}
+@font-face {
+    font-family: 'Christian Heedlay';
+    src: url('../fonts/Christian\ Heedlay.ttf');
 }
 
 

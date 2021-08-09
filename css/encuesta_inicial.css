@@ -1,3 +1,6 @@
+*{
+    color: #fff;
+}
 .pregunta{
     display: none;
 }
@@ -36,6 +39,9 @@
 
 #cuantos_cont{
     display: none;
+}
+#cuantos_cont::placeholder{
+    color: #ffff !important;
 }
 
 @keyframes animacion_arriba{
