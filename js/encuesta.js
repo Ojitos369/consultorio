@@ -71,6 +71,7 @@ function formulario(){
     let container =  document.getElementById('main-container');
     let comentario = document.getElementsByClassName('opinion')[0];
     let preguntas = document.getElementsByClassName('pregunta');
+    let siguientes = document.getElementsByClassName('siguiente');
 
     // get height of container
     let alto = container.offsetHeight;
@@ -83,6 +84,10 @@ function formulario(){
 
     // set padding to comentario
     comentario.style.paddingBottom = `${alto * 0.1}px`;
+
+    for (i = 0; i < siguientes.length; i++){
+        siguientes[i].style.marginLeft = `${preguntas[0].offsetWidth * 0.8}px`;
+    }
 
     for(i = 0; i < preguntas.length; i++){
         preguntas[i].style.fontSize = `25px`;

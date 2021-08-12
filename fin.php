@@ -39,7 +39,8 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
 <body onload="animaciones(); tamanios();">
     <img src="./imagenes/fondo.jpeg" alt="" class="img-fondo" id="img_fondo">
     <div class="main-container" id="main-container">
-        <form accept-charset="utf-8" action="r_fin.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
+        <!-- <form accept-charset="utf-8" action="r_fin.php" method="POST" id="formulario" class="formulario container" autocomplete="off"> -->
+        <form accept-charset="utf-8" action="index.php" method="POST" id="formulario" class="formulario container" autocomplete="off">
             <?php 
                 while($pregunta = $preguntas->fetch_assoc()):
                     $query = "select * from respuestas";
@@ -66,7 +67,9 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
                     <br>
                 <?php }else{ ?>
                     <input id="cont_<?= $pregunta["id"] ?>" class="pregunta input input-texto <?= $pregunta["clase"] ?>" name="<?= $pregunta["id"] ?>" placeholder="<?= str_replace($simbolos, $simbolos_codif, $pregunta["pregunta"]) ?>" type="<?= $pregunta["tipo"] ?>" required=""></input><br>
-                    <img src="./imagenes/siguiente.png" alt="" class="siguiente <?= $pregunta["clase"] ?>" id="siguiente" onclick="cambio('<?= $pregunta["id"] ?>')">
+                    <div class="flechas" id="flechas">
+                        <img src="./imagenes/siguiente.png" alt="" class="siguiente <?= $pregunta["clase"] ?>" id="siguiente" onclick="cambio('<?= $pregunta["id"] ?>')">
+                    </div>
                 <?php } ?>
                 <br>
                 <script>
@@ -76,7 +79,10 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
                 endwhile
             ?>
             <input name="id_encuesta" type="hidden" value="2">
-            <input id="enviar" class="pregunta input enviar" type="submit" title="enviar">
+            <!-- <input id="enviar" class="pregunta input enviar" type="submit" title="enviar"> -->
+            <button id="enviar" class="pregunta input enviar" title="enviar" onclick="alert('Servicio no disponible por falta de pago')">
+                        Enviar
+            </button>
         </form>
         <div id="logo" class="logo">
             <?php require('logo.php'); ?>

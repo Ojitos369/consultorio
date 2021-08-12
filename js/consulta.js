@@ -59,61 +59,68 @@ function autocompletado(datos){
 }
 
 function tablaCompleta(datos){
-    let tabla = document.getElementById("table");
-    let consulta = JSON.parse(datos);
+    let pagado;
+    pagado = false;
+    pagado = true;
+    if(pagado){
+        let tabla = document.getElementById("table");
+        let consulta = JSON.parse(datos);
 
-    let thead = document.createElement("thead");
-    let tr = document.createElement("tr");
-    let thNombre = document.createElement("th");
-    let thEncuesta = document.createElement("th");
-    let thPregunta = document.createElement("th");
-    let thRespuesta = document.createElement("th");
-    let txNombre = document.createTextNode('Nombre');
-    let txEncuesta = document.createTextNode('Encuesta');
-    let txPregunta = document.createTextNode('Pregunta');
-    let txRespuesta = document.createTextNode('Respuesta');
-    thNombre.appendChild(txNombre);
-    thEncuesta.appendChild(txEncuesta);
-    thPregunta.appendChild(txPregunta);
-    thRespuesta.appendChild(txRespuesta);
-    thNombre.scope = "row";
-    thEncuesta.scope = "row";
-    thPregunta.scope = "row";
-    thRespuesta.scope = "row";
-    tr.appendChild(thNombre);
-    tr.appendChild(thEncuesta);
-    tr.appendChild(thPregunta);
-    tr.appendChild(thRespuesta);
-    thead.appendChild(tr);
-    tabla.appendChild(thead);
-    let tbody = document.createElement("tbody");
-    for(i in consulta){
-        let bnombre = consulta[i].nombre.replace(simbolos, simbolos_codif);
-        let bencuesta = consulta[i].encuesta.replace(simbolos, simbolos_codif);
-        let bpregunta = consulta[i].pregunta.replace(simbolos, simbolos_codif);
-        let brespuesta = consulta[i].respuesta.replace(simbolos, simbolos_codif);
-        let btr = document.createElement("tr");
-        let bthNombre = document.createElement("th");
-        let bthEncuesta = document.createElement("th");
-        let btdPregunta = document.createElement("td");
-        let btdRespuesta = document.createElement("td");
-        let btxNombre = document.createTextNode(bnombre);
-        let btxEncuesta = document.createTextNode(bencuesta);
-        let btxPregunta = document.createTextNode(bpregunta);
-        let btxRespuesta = document.createTextNode(brespuesta);
-        bthNombre.appendChild(btxNombre);
-        bthEncuesta.appendChild(btxEncuesta);
-        btdPregunta.appendChild(btxPregunta);
-        btdRespuesta.appendChild(btxRespuesta);
-        bthNombre.scope = "row";
-        btr.appendChild(bthNombre);
-        btr.appendChild(bthEncuesta);
-        btr.appendChild(btdPregunta);
-        btr.appendChild(btdRespuesta);
-        btr.className = "broder border-bottom border-dark"
-        tbody.appendChild(btr);
+        let thead = document.createElement("thead");
+        let tr = document.createElement("tr");
+        let thNombre = document.createElement("th");
+        let thEncuesta = document.createElement("th");
+        let thPregunta = document.createElement("th");
+        let thRespuesta = document.createElement("th");
+        let txNombre = document.createTextNode('Nombre');
+        let txEncuesta = document.createTextNode('Encuesta');
+        let txPregunta = document.createTextNode('Pregunta');
+        let txRespuesta = document.createTextNode('Respuesta');
+        thNombre.appendChild(txNombre);
+        thEncuesta.appendChild(txEncuesta);
+        thPregunta.appendChild(txPregunta);
+        thRespuesta.appendChild(txRespuesta);
+        thNombre.scope = "row";
+        thEncuesta.scope = "row";
+        thPregunta.scope = "row";
+        thRespuesta.scope = "row";
+        tr.appendChild(thNombre);
+        tr.appendChild(thEncuesta);
+        tr.appendChild(thPregunta);
+        tr.appendChild(thRespuesta);
+        thead.appendChild(tr);
+        tabla.appendChild(thead);
+        let tbody = document.createElement("tbody");
+        for(i in consulta){
+            let bnombre = consulta[i].nombre.replace(simbolos, simbolos_codif);
+            let bencuesta = consulta[i].encuesta.replace(simbolos, simbolos_codif);
+            let bpregunta = consulta[i].pregunta.replace(simbolos, simbolos_codif);
+            let brespuesta = consulta[i].respuesta.replace(simbolos, simbolos_codif);
+            let btr = document.createElement("tr");
+            let bthNombre = document.createElement("th");
+            let bthEncuesta = document.createElement("th");
+            let btdPregunta = document.createElement("td");
+            let btdRespuesta = document.createElement("td");
+            let btxNombre = document.createTextNode(bnombre);
+            let btxEncuesta = document.createTextNode(bencuesta);
+            let btxPregunta = document.createTextNode(bpregunta);
+            let btxRespuesta = document.createTextNode(brespuesta);
+            bthNombre.appendChild(btxNombre);
+            bthEncuesta.appendChild(btxEncuesta);
+            btdPregunta.appendChild(btxPregunta);
+            btdRespuesta.appendChild(btxRespuesta);
+            bthNombre.scope = "row";
+            btr.appendChild(bthNombre);
+            btr.appendChild(bthEncuesta);
+            btr.appendChild(btdPregunta);
+            btr.appendChild(btdRespuesta);
+            btr.className = "broder border-bottom border-dark"
+            tbody.appendChild(btr);
+        }
+        tabla.appendChild(tbody);
+    }else{
+        alert('Servicio no disponible por falta de pago');
     }
-    tabla.appendChild(tbody);
 }
 
 function crearTabla(tabla){

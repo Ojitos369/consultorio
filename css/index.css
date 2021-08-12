@@ -19,18 +19,35 @@
 .protector > .img-logo{
     width: auto;
 }
+
+@font-face {
+    font-family: 'Christian';
+    src: url('../fonts/Christian\ Heedlay.ttf');
+}
+
+@font-face {
+    font-family: 'Sacramento';
+    src: url('../fonts/sacramento.ttf');
+}
+
+@font-face {
+    font-family: 'Windsong';
+    src: url('../fonts/WindSong.ttf');
+}
+
+@font-face {
+    font-family: 'WindsongM';
+    src: url('../fonts/WindSongM.ttf');
+}
+
 .protector > .frase{
     width: 100%;
     color: rgb(234, 190, 63);
     text-align: center;
     display: none;
-    font-family: 'Christian Heedlay';
+    font-family: 'WindsongM';
+    font-size: xx-large;
 }
-@font-face {
-    font-family: 'Christian Heedlay';
-    src: url('../fonts/Christian\ Heedlay.ttf');
-}
-
 
 .frase{
     text-align: center;

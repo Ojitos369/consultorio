@@ -33,9 +33,9 @@ $simbolos_codif = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute
                     "encuesta": '<?= str_replace($simbolos, $simbolos_codif, $dato["encuesta"]) ?>',
                     "pregunta": '<?= str_replace($simbolos, $simbolos_codif, $dato["pregunta"]) ?>',
                     "respuesta": '<?= str_replace($simbolos, $simbolos_codif, $dato["respuesta"]) ?>'
-                }
+                };
             //console.log(dato)
-            datos.push(dato)
+            datos.push(dato);
         <?php
             endwhile
         ?>

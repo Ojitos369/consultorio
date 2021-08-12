@@ -5,14 +5,8 @@
     display: none;
 }
 
-.siguiente{
+.siguiente, .anterior{
     display: none;
-}
-
-.siguiente{
-    position: relative;
-    width: 50px;
-    left: 25%;
 }
 
 .iniciales{
