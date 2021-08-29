@@ -17,7 +17,7 @@ function ocultar(){
             fondo.style.zIndex = 9
             protector.style.display = 'flex';
         },40000);
-    },3000);
+    },30000);
 }
 
 function inicio(){

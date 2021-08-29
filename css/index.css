@@ -30,11 +30,13 @@
     src: url('../fonts/sacramento.ttf');
 }
 
+/* windsong regular */
 @font-face {
     font-family: 'Windsong';
     src: url('../fonts/WindSong.ttf');
 }
 
+/* windsong medium */
 @font-face {
     font-family: 'WindsongM';
     src: url('../fonts/WindSongM.ttf');
@@ -45,7 +47,7 @@
     color: rgb(234, 190, 63);
     text-align: center;
     display: none;
-    font-family: 'WindsongM';
+    font-family: 'Christian';
     font-size: xx-large;
 }
 
