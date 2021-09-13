@@ -4,3 +4,5 @@ node_modules
 *.json
 src/app/assets/json/
 src/app/assets/json/datos.json
+.htaccess
+json
